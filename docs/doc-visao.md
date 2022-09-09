@@ -20,7 +20,6 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 Perfil        | Descrição                                                                                                                                             |
 ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 Recepcionista | Este usuário tem acesso acesso a todas as funcionalidades de CRUD relativas às entidades: hóspede, quartos e reservas.
-Administrador | Este usuário pode consultar as informações do seu próprio perfil, assim como visualizar o registro das suas reservas.
 
 
 ## Requisitos Funcionais
