@@ -11,7 +11,7 @@ Documento construído a partido do Modelo BSI - Doc 001 - Documento de Visão qu
 
 ## Descrição do Projeto
 
-<p align="justify">O sistema sigHotel terá como objetivo o gerenciamento de um hotel, no qual terá algumas funcionalidade iniciais como os CRUD de hóspedes, quartos e reservas. Além de outras funcionalidades que poderá surgir.</p>
+<p align="justify">O sistema sigHotel terá como objetivo o gerenciamento de um hotel, no qual terá algumas funcionalidade iniciais como os CRUD de hóspedes, quartos e reservas. O sistema deverá ser capaz fazer chekin quando o hóspede for ao hotel presencialmente, poderá fazer checkout, afim de verificar todos os gastos feitos por ele durante a estadia.Além de outras funcionalidades que poderá surgir durante o desenvolvimento do projeto.</p>
 
 ## Perfis dos Usuários
 
@@ -19,35 +19,27 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 
 Perfil        | Descrição                                                                                                                                             |
 ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-Recepcionista | Este usuário tem acesso acesso a todas as funcionalidades de CRUD relativas às entidades: hóspede, quartos e reservas.
+Recepcionista | Este usuário tem acesso acesso a algumas das funcionalidades de chekin, checkout, reservas e hóspede.
+Administrador | Este usuário tem acesso acesso a todas as funcionalidades de CRUD relativas às entidades: Quartos e relatório.
 
 
 ## Requisitos Funcionais
 
 Requisito                         | Descrição   | Ator       |
 --------------------------------- | ----------- | ---------- |
-RF01 - Inserir Hospede            | Um hóspede possui nome, cpf, senha, cidade, estado, celular,email e status. | Recepcionista
-RF02 - Alterar Hospede            | A alteração permite a mudança do nome, cpf, senha, cidade, estado, celular,email. | Recepcionista
-RF03 - Buscar Hospede             | A busca é feita com base no cpf do hóspede. | Recepcionista
-RF04 - Listar Hospede             | Lista todos as instâncias de hóspedes  | Recepcionista
-RF05 - Excluir Hospede            | A exclusão é feita mudando o status do hóspde | Recepcionista
-RF06 - Inserir Quarto             | Um quarto possui numero, limite_hospedes,descrição,tipo_de_quarto e status. | Recepcionista
-RF07 - Alterar Quarto             | A alteração permite a mudança do numero, limite_hospedes,descrição e tipo_de_quarto. | Recepcionista
-RF08 - Buscar Quarto              | A busca é feita com base no numero do quarto. | Recepcionista 
-RF09 - Listar Quarto              | Lista todos as instâncias de quartos | Recepcionista
-RF10 - Excluir Quarto             | A exclusão é feita com base no status do quarto | Recepcionista
-RF11 - Inserir reserva            | Uma reserva possui numero_da_reserva, hospedes,hospede_responsável, quarto, duração_da_hospedagem, status_pagamento, valor_pagamento. | Recepcionista
-RF12 - Alterar reserva            | A alteração permite a mudança do numero_da_reserva, hospedes,hospede_responsável, quarto, duração_da_hospedagem, status_pagamento, valor_pagamento. | Recepcionsita
-RF13 - Buscar reserva             | A busca é feita com base no numero_da_reserva da reserva. | Recepcionista
-RF14 - Listar reserva             | Lista todos as instâncias de reservas | Recepcionista
-
-## Requisitos Não-funcionais
-
-Requisito | Descrição  
---------- | -----------
-RNF01 | Deve ser acessível via qualquer navegador escolhido pelo usuário
-RNF02 | Não deve apresentar erros ao usuário final que estiver usando em tempo real quando o servidor for desativado para possíveis manutenções.
-RNF03 | Deve ter confidencialidade, ou seja, apenas usuários que tem permissões de acessar determinadas páginas da aplicação deve acessa-las.
-RNF04 | Deve ter integridade, ou seja, os dados que foram adicionados ao banco de dados pela aplicação de uma forma deve ser retornado da mesma forma.
+RF01 - Inserir Hóspede            | Um hóspede possui nome, cpf, senha, cidade, estado, celular,email e status. | Recepcionista
+RF02 - Alterar Hóspede            | A alteração permite a mudança do nome, cpf, senha, cidade, estado, celular,email. | Recepcionista
+RF03 - Buscar Hóspede             | A busca é feita com base no cpf do hóspede. | Administrador/Recepcionista
+RF04 - Listar Hóspede             | Lista todos as instâncias de hóspedes  | Administrador/Recepcionista
+RF05 - Excluir Hóspede            | A exclusão é feita mudando o status do hóspde | Recepcionista
+RF06 - Inserir Quarto             | Um quarto possui numero, limite_hospedes,descrição,tipo_de_quarto e status. | Administrador
+RF07 - Alterar Quarto             | A alteração permite a mudança do numero, limite_hospedes,descrição e tipo_de_quarto. | Administrador
+RF08 - Buscar Quarto              | A busca é feita com base no numero do quarto. | Administrador 
+RF09 - Listar Quarto              | Lista todos as instâncias de quartos | Administrador
+RF10 - Excluir Quarto             | A exclusão é feita com base no status do quarto | Administrador
+RF11 - Inserir Reserva            | Uma reserva possui numero_da_reserva, hospedes,hospede_responsável, quarto, duração_da_hospedagem, status_pagamento, valor_pagamento. | Recepcionista
+RF12 - Alterar Reserva            | A alteração permite a mudança do numero_da_reserva, hospedes,hospede_responsável, quarto, duração_da_hospedagem, status_pagamento, valor_pagamento. | Recepcionista
+RF13 - Buscar Reserva             | A busca é feita com base no numero_da_reserva da reserva. | Recepcionista
+RF14 - Listar Reserva             | Lista todos as instâncias de reservas | Recepcionista
 
 
