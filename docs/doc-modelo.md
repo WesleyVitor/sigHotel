@@ -7,42 +7,100 @@ Neste documento temos o modelo Conceitual (UML) ou de Dados (Entidade-Relacionam
 ```mermaid
 classDiagram
     
-    class Hospede{
+    class Guest{
         -Int id
         -String name
         -String cpf
         -String phone
         -String email
 
-        +insertHospede() void
-        +getHospede() Hospede
-        +updateHospede() Hospede
-        +deleteHospede() Hospede
-        +listHospede() List~Hospede~
+        +insertGuest() void
+        +getGuest() Guest
+        +updateGuest() Guest
+        +deleteGuest() Guest
+        +listGuest() List~Guest~
     }
     
     class Address{
-      -String rua 
-      -String numero 
-      -String complemento 
-      -String bairro 
-      -String cidade 
-      -String estado 
-      -String pais 
+      -String street 
+      -String number 
+      -String complement   
+      -String district 
+      -String city 
+      -String state 
+      -String country 
       -String cep 
       
-      +insertHospede() void
+      +insertGuest() void
     }
     
-    class Status{
+    class StatusGuest{
       <<enumeration>>
-      ativo
-      inativo
+      active
+      inactive
+      did_reservation
+    }
+
+    class Bedroom{
+      -String number
+      -Integer max_guest
+      -Text description
+
+      +insertBedroom() void
+      +getBedroom() Bedroom
+      +updateBedroom() Bedroom
+      +deleteBedroom() Bedroom
+      +listBedroom() List~Bedroom~
+    }
+
+    class TypeBedroomByBed{
+      <<enumeration>>
+      single_room
+      twin_room
+      couple_room
+    }
+
+    class TypeBedroomByCharacterizations{
+      <<enumeration>>
+      standard
+      master
+      deluxe
+    }
+
+    class StatusBedroom{
+      <<enumeration>>
+      maintenance
+      reserved
+      occupied
+      ready
+    }
+
+    class Reservation{
+      -String code_reservation
+      -Date hosting_date
+      -Fload value_payment
+    }
+
+    class StatusPayment{
+      <<enumeration>>
+      paid
+      unpaid
     }
     
-    Hospede "*" --o "1" Address
-    Hospede "1" --o "1" Status
+    Guest "*" --> "1" Address
+    Guest "1" --> "1" StatusGuest
     
+    Bedroom "*" --> "1" TypeBedroomByBed
+    Bedroom "*" --> "1" TypeBedroomByCharacterizations
+    Bedroom "*" --> "1" StatusBedroom
+    Bedroom "1" --> "*" Guest
+
+    Reservation "1" --> "*" Guest :Guests
+    Reservation "1" --> "1" Guest :responsible Guest
+    Reservation "1" --> "*" Bedroom
+    Reservation "*" --> "1" StatusPayment
+
+
 
    
 
