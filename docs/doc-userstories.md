@@ -59,3 +59,29 @@ RF5| Excluir Quarto
 | **TA04.01** | O adminstrador/recepcionista deseja listar quartos no sistema então ele vai até a tela de Listar quartos cadastrados. Caso exista quarto cadastrados, então aparecerá na listagem de quatos.                                                                                                                                         |
 | **TA04.02** | O adminstrador/recepcionista deseja listar quartos no sistema então ele vai até a tela de Listar quartos cadastrados. Caso não exista quartos cadastrados, então aparecerá na listagem de quartos a mensagem "Nenhum quarto cadastrado".                                                                                                                                         |
 | **TA05.01** | O adminstrador deseja excluir um quarto no sistema então ele vai até a tela de pesquisar quartos cadastrados. Caso exista quartos cadastrados, então poderá excluir um quarto                                                                                                                                      |
+
+## User Story US01 - Manter Reserva
+
+<strong>Descrição:</strong> O sistema deve ter uma área para inserir, alterar, buscar e deletar reserva. Um quarto terá como atributos numero_da_reserva, hospedes,hospede_responsável, quarto, duração_da_hospedagem, status_pagamento, valor_pagamento.
+
+
+| # | Requisitos Envolvidos |
+----|---------------------
+RF1| Inserir Reserva    
+RF2| Alterar Reserva
+RF3| Buscar Reserva
+RF4| Listar Reservas
+
+
+**Testes de Aceitação (TA)**
+
+| **Código**  | **Descrição**                                                                                                                                                                                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **TA01.01** | O recepcionista deseja cadastrar uma reserva no sistema então ele vai até a tela de inserir uma nova reserva. Então ela preenche os campos obrigatórios de modo correto e clica em Salvar/Cadastrar, recebendo uma notificação de sucesso, como "Reserva cadastrada com sucesso"                   |
+| **TA01.02** | O recepcionista deseja cadastrar uma reserva no sistema então ele vai até a tela de inserir uma nova reserva. Então ela preenche os campos obrigatórios de modo incorreto e clica em Salvar/Cadastrar, recebendo uma notificação de fracasso sobre os erros nos campos preenchidos"                                                                                                                                          |
+| **TA02.01** | O recepcionista deseja alterar uma reserva no sistema então ele vai até a tela de pesqusar uma reserva cadastrado e clica em Editar reserva. Então ela preenche os campos que desejam alterar de modo correto e clica em Salvar, recebendo uma notificação de sucesso, como "Reserva alterada com sucesso"                                                                                                                                          |
+| **TA02.02** | O recepcionista deseja alterar uma reserva no sistema então ele vai até a tela de pesqusar uma reserva cadastrado e clica em Editar Reserva. Então ela preenche os campos que desejam alterar de modo incorreto e clica em Salvar, recebendo uma notificação de sucesso, como "Reserva alterada com sucesso"                                                                                                                                          |
+| **TA03.01** | O recepcionista deseja buscar uma reserva no sistema então ele vai até a tela de pesquisar uma reserva cadastrado a partir do Código da reserva. Caso o quarto esteja cadastrado aparecerá na listagem de reserva.                                                                                                                                         |
+| **TA03.02** | O recepcionista deseja buscar uma reserva no sistema então ele vai até a tela de pesqusar uma reserva cadastrado a partir do Código da reserva. Caso o quarto não esteja cadastrado aparecerá na listagem de quartos a mensagem "Nenhuma reserva cadastrado com essas informações".                                                                                                                                          |
+| **TA04.01** | O recepcionista deseja listar reservas no sistema então ele vai até a tela de Listar reservas cadastradas. Caso exista quarto cadastrados, então aparecerá na listagem de reservas.                                                                                                                                         |
+| **TA04.02** | O recepcionista deseja listar reservas no sistema então ele vai até a tela de Listar reservas cadastrados. Caso não exista reservas cadastradas, então aparecerá na listagem de quartos a mensagem "Nenhum reserva cadastrado".                                                                                                                                         |    
