@@ -31,3 +31,31 @@ RF5| Excluir Hóspede
 | **TA04.01** | O recepcionista deseja buscar um hóspede no sistema então ele vai até a tela de Listar hóspedes cadastrados. Caso exista hóspedes cadastrados, então aparecerá na listagem de hóspedes.                                                                                                                                         |
 | **TA04.02** | O recepcionista deseja buscar um hóspede no sistema então ele vai até a tela de Listar hóspedes cadastrados. Caso não exista hóspedes cadastrados, então aparecerá na listagem de hóspedes a mensagem "Nenhum hóspede cadastrado".                                                                                                                                         |
 | **TA05.01** | O recepcionista deseja excluir um hóspede no sistema então ele vai até a tela de pesquisar hóspedes cadastrados. Caso exista hóspedes cadastrados, então poderá excluir um hóspede                                                                                                                                      |
+
+## User Story US01 - Manter Quartos
+
+<strong>Descrição:</strong> O sistema deve ter uma área para inserir, alterar, buscar e deletar quarto. Um quarto terá como atributos número, max_hospedes, descrição, tipo_por_cama, tipo_por_caracterizacao e status.
+
+
+| # | Requisitos Envolvidos |
+----|---------------------
+RF1| Inserir Quarto
+RF2| Alterar Quarto
+RF3| Buscar Quarto
+RF4| Listar Quartos
+RF5| Excluir Quarto
+
+
+**Testes de Aceitação (TA)**
+
+| **Código**  | **Descrição**                                                                                                                                                                                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **TA01.01** | O administrador deseja cadastrar um quarto no sistema então ele vai até a tela de inserir um novo quarto. Então ela preenche os campos obrigatórios de modo correto e clica em Salvar/Cadastrar, recebendo uma notificação de sucesso, como "Quarto cadastrado com sucesso"                   |
+| **TA01.02** | O administrador deseja cadastrar um quarto no sistema então ele vai até a tela de inserir um novo quarto. Então ela preenche os campos obrigatórios de modo incorreto e clica em Salvar/Cadastrar, recebendo uma notificação de fracasso sobre os erros nos campos preenchidos"                                                                                                                                          |
+| **TA02.01** | O adminstrador deseja alterar um quarto no sistema então ele vai até a tela de pesqusar um quarto cadastrado e clica em Editar quarto. Então ela preenche os campos que desejam alterar de modo correto e clica em Salvar, recebendo uma notificação de sucesso, como "Quarto alterado com sucesso"                                                                                                                                          |
+| **TA02.02** | O adminstrador deseja alterar um quarto no sistema então ele vai até a tela de pesqusar um quarto cadastrado e clica em Editar Quarto. Então ela preenche os campos que desejam alterar de modo incorreto e clica em Salvar, recebendo uma notificação de sucesso, como "Quarto alterado com sucesso"                                                                                                                                          |
+| **TA03.01** | O adminstrador/recepcionista deseja buscar um quarto no sistema então ele vai até a tela de pesquisar um quarto cadastrado a partir do Código do quarto. Caso o quarto esteja cadastrado aparecerá na listagem de quarto.                                                                                                                                         |
+| **TA03.02** | O adminstrador/recepcionista deseja buscar um quarto no sistema então ele vai até a tela de pesqusar um quarto cadastrado a partir do Código do quarto. Caso o quarto não esteja cadastrado aparecerá na listagem de quartos a mensagem "Nenhum quarto cadastrado com essas informações".                                                                                                                                          |
+| **TA04.01** | O adminstrador/recepcionista deseja listar quartos no sistema então ele vai até a tela de Listar quartos cadastrados. Caso exista quarto cadastrados, então aparecerá na listagem de quatos.                                                                                                                                         |
+| **TA04.02** | O adminstrador/recepcionista deseja listar quartos no sistema então ele vai até a tela de Listar quartos cadastrados. Caso não exista quartos cadastrados, então aparecerá na listagem de quartos a mensagem "Nenhum quarto cadastrado".                                                                                                                                         |
+| **TA05.01** | O adminstrador deseja excluir um quarto no sistema então ele vai até a tela de pesquisar quartos cadastrados. Caso exista quartos cadastrados, então poderá excluir um quarto                                                                                                                                      |
