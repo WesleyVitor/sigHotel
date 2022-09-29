@@ -31,4 +31,16 @@ id US01                      |       Manter Hóspede
 id US02                      |       Manter Quartos
 id US03                      |       Manter Reserva
 
+## 3 - Estratégia dos testes
+
+
+### 3.1 - Tipos de teste
+
+- Teste de Unidade
+   - Chamar cada método de modelo, serviços ou outra camada, propagando cada um com dados válidos e inválidos.
+   - Inspecionar método de modelo, serviços ou outra camada para assegurar que os dados foram preenchidos conforme planejado 
+- Teste de Integridade
+   - Chamar cada Action dos controllers propagando cada um com dados válidos e inválidos.
+- Teste de sistema
+   - Criação de um Script para rodar no selenium, afim de verificar como são os fluxos do projeto.
 
