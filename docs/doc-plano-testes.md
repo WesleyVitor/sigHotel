@@ -21,3 +21,14 @@ Com esse documento, você deve:
 - Identificar os recursos necessários e prover uma estimativa dos esforços de teste.
 - Listar os elementos resultantes do projeto de testes.
 
+## 2 - Requisitos a Testar
+
+### Casos de uso:
+
+Identificador do caso de uso | Nome do caso de uso
+-----------------------------|---------------------
+id US01                      |       Manter Hóspede
+id US02                      |       Manter Quartos
+id US03                      |       Manter Reserva
+
+
