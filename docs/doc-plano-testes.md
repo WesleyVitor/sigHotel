@@ -44,3 +44,17 @@ id US03                      |       Manter Reserva
 - Teste de sistema
    - Criação de um Script para rodar no selenium, afim de verificar como são os fluxos do projeto.
 
+
+## 4 - Recursos
+
+Esta seção deve descrever os recursos humanos, de ambiente de teste e de ferramentas de automatização de testes necessários para execução dos testes que devem ser descritos nas subseções que seguem.
+
+### 4.1 - Ambiente de teste - Software
+
+Para descrever os ambientes de testes em relação aos softewares usados, será usado o framework de testes chamado RSpec que auxilia no desenvolvimento usando o framework Ruby on rails.
+### 4.2 - Ferramenta de teste
+
+- RSpec Rails
+- Selenium
+
+
