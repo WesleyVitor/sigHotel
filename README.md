@@ -10,6 +10,6 @@ no curso de Bacharelado em Sistemas da Informação, pela Universidade Federal d
 
 * [Documento de Visão](https://github.com/WesleyVitor/sigHotel/blob/main/docs/doc-visao.md)
 * [Documento de Modelo](https://github.com/WesleyVitor/sigHotel/blob/main/docs/doc-modelo.md)
-* [Plano de Testes](https://github.com/WesleyVitor/sigHotel/blob/docs/plano_testes/docs/doc-plano-testes.md)
-* [Documento de Users Stories](https://github.com/WesleyVitor/sigHotel/blob/docs/plano_testes/docs/doc-userstories.md)
+* [Plano de Testes](https://github.com/WesleyVitor/sigHotel/blob/main/docs/doc-plano-testes.md)
+* [Documento de Users Stories](https://github.com/WesleyVitor/sigHotel/blob/main/docs/doc-userstories.md)
 
