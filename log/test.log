@@ -204,3 +204,177 @@
   [1m[36mHospede Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
   [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (1.4ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["email", "MyString"], ["status", "MyString"], ["celular", "MyString"], ["created_at", "2022-10-12 17:24:31.933625"], ["updated_at", "2022-10-12 17:24:31.933625"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.2ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (0.3ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["email", "MyString"], ["status", "MyString"], ["celular", "MyString"], ["created_at", "2022-10-12 17:24:59.232135"], ["updated_at", "2022-10-12 17:24:59.232135"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["email", "MyString"], ["status", "MyString"], ["celular", "MyString"], ["created_at", "2022-10-12 17:25:39.201092"], ["updated_at", "2022-10-12 17:25:39.201092"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (0.3ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["email", "MyString"], ["status", "MyString"], ["celular", "MyString"], ["created_at", "2022-10-12 17:26:38.515500"], ["updated_at", "2022-10-12 17:26:38.515500"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 14:26:38 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 307)
+  Rendered layout layouts/application.html.erb (Duration: 611.5ms | Allocations: 100875)
+Completed 200 OK in 639ms (Views: 620.1ms | ActiveRecord: 0.0ms | Allocations: 104538)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (0.3ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "MyString"], ["cpf", "MyString"], ["email", "MyString"], ["status", "MyString"], ["celular", "MyString"], ["created_at", "2022-10-12 17:27:18.253716"], ["updated_at", "2022-10-12 17:27:18.253716"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "MyString"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "mYsTRING"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 14:27:18 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 307)
+  Rendered layout layouts/application.html.erb (Duration: 155.8ms | Allocations: 20661)
+Completed 200 OK in 164ms (Views: 158.7ms | ActiveRecord: 0.0ms | Allocations: 23892)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
