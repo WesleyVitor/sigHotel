@@ -1,0 +1,14 @@
+
+
+<div class="text-left mt-3">
+<h1>Hóspedes</h1>
+
+    <% if @hospedes.count > 0%>
+        <% @hospedes.each do |hospede|%>
+            <label>Nome:</label><p><%= hospede.nome%></p>
+        <%end%>
+    <% else%>
+        <p>Não existe hóspedes cadastrados</p>
+
+    <%end%>
+</div>
