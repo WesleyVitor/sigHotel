@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :hospede do
-    nome { "MyString" }
+    nome { Faker::Name.name }
     cpf { "MyString" }
     email { "MyString" }
     status { "MyString" }
-    celular { "MyString" }
+    celular { Faker::PhoneNumber.cell_phone  }
   end
 end
