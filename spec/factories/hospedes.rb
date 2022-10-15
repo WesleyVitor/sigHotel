@@ -5,5 +5,6 @@ FactoryBot.define do
     email { "MyString" }
     status { "MyString" }
     celular { Faker::PhoneNumber.cell_phone  }
+    association :endereco_id, factory: :endereco
   end
 end
