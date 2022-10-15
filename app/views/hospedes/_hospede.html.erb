@@ -1,0 +1,11 @@
+<%= turbo_frame_tag hospede do%>
+    <tr>
+      <td><%= hospede.nome%></td>
+      <td><%= hospede.email%></td>
+      <td><%= hospede.celular%></td>
+      <td scope="col">
+                <button type="button" class="btn btn-warning">Editar</button>
+                <button type="button" class="btn btn-danger">Deletar</button>
+        </td>
+    </tr>
+<%end%>
