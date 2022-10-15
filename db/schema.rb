@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_123031) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_150501) do
+  create_table "enderecos", force: :cascade do |t|
+    t.string "rua"
+    t.string "numero"
+    t.string "complemento"
+    t.string "bairro"
+    t.string "cidade"
+    t.string "estado"
+    t.string "pais"
+    t.string "cep"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hospedes", force: :cascade do |t|
     t.string "nome"
     t.string "cpf", null: false
@@ -19,6 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_123031) do
     t.string "celular"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "endereco_id"
+    t.index ["endereco_id"], name: "index_hospedes_on_endereco_id"
   end
 
+  add_foreign_key "hospedes", "enderecos"
 end
