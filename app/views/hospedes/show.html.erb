@@ -1,0 +1,18 @@
+
+
+<div class="text-left mt-3">
+<%= link_to sanitize("&larr; Back to Hóspedes"), hospedes_path %>
+<h1>Hóspede</h1>
+
+
+<div class="card" style="width: 50rem;">
+  
+  <div class="card-body">
+    <h5 class="card-title"><%= @hospede.nome%></h5>
+    <label >E-mail: </label><p style="display: inline-block;" class="card-text"><%= @hospede.email%></p>
+    <hr>
+    <label>Celular: </label><p style="display: inline-block;" class="card-text"><%= @hospede.celular%></p>
+  </div>
+  
+</div>
+

@@ -1,6 +1,6 @@
 <%= turbo_frame_tag hospede do%>
     <tr>
-      <td><%= hospede.nome%></td>
+      <td><%= link_to hospede.nome, hospede_path(hospede), data: {turbo_frame: "_top"} %></td>
       <td><%= hospede.email%></td>
       <td><%= hospede.celular%></td>
       <td scope="col">
