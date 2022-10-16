@@ -32,7 +32,7 @@ RSpec.describe Hospede, type: :model do
       
       context "uniqueness of" do
         subject { FactoryBot.build(:hospede) } 
-        it { should validate_uniqueness_of(:cpf) }
+        it { should validate_uniqueness_of(:cpf).case_insensitive  }
       end
       
     end
