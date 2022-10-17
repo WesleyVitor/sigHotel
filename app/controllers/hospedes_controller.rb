@@ -6,6 +6,6 @@ class HospedesController < ApplicationController
 
 
     def show
-        @hospede = Hospede.find(params[:id])
+        @hospede = HospedeRepository.get_hospede_by_id(params[:id])
     end
 end
