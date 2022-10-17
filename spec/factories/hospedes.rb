@@ -6,7 +6,10 @@ FactoryBot.define do
     status { "MyString" }
     celular { Faker::PhoneNumber.cell_phone  }
     
-    association :endereco_id, factory: :endereco 
+    association :endereco_id, factory: :endereco, strategy: :create
+
+    
   end
+  
    
 end
