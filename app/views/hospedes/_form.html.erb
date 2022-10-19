@@ -1,0 +1,30 @@
+<div class="text-left mt-3">
+    <%= form_with model: hospede do |form|%>
+        <% if hospede.errors.any? %>
+        <div class="error-message">
+        <%= hospede.errors.full_messages.to_sentence.capitalize %>
+        </div>
+        <% end %>
+        <p>
+            <%= form.label :nome%></br>
+            <%= form.text_field :nome %>
+        </p>
+        <p>
+            <%= form.label :cpf%></br>
+            <%= form.text_field :cpf %>
+        </p>
+        <p>
+            <%= form.label :email%></br>
+            <%= form.text_field :email %>
+        </p>
+        <p>
+            <%= form.label :celular%></br>
+            <%= form.text_field :celular %>
+        </p>
+        
+        <p>
+            <%= form.submit %>
+        </p>
+
+    <%end%>
+</div>
