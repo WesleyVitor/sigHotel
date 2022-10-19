@@ -208,6 +208,9 @@ GEM
     ruby-progressbar (1.11.0)
     shoulda-matchers (5.2.0)
       activesupport (>= 5.2.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     solargraph (0.47.2)
       backport (~> 1.2)
       benchmark
@@ -272,6 +275,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rspec-rails
   shoulda-matchers
+  simple_form
   solargraph
   sprockets-rails
   sqlite3 (~> 1.4)
