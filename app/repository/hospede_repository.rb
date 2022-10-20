@@ -7,5 +7,10 @@ class HospedeRepository
         def get_hospede_by_id(id)
             Hospede.find(id)
         end
+
+        def create_hospede(hospede_params)
+            hospede = Hospede.new(hospede_params)
+            hospede.save
+        end
     end
 end
