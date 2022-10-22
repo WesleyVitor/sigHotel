@@ -15,8 +15,10 @@ class HospedesController < ApplicationController
     end
 
     def create
-        if HospedeRepository.create_hospede(valid_params)
-            redirect_to hospedes_path, notice:"Hospede was successfully created."
+        @hospede = HospedeRepository.create_hospede(valid_params)
+        if @hospede.persisted?
+            
+            redirect_to new_hospede_endereco_path(@hospede.id)
         else
             render :new, status: :unprocessable_entity
         end

@@ -11,6 +11,8 @@ class HospedeRepository
         def create_hospede(hospede_params)
             hospede = Hospede.new(hospede_params)
             hospede.save
+            
+            hospede
         end
     end
 end
