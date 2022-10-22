@@ -10,10 +10,28 @@
   <div class="card-body">
     <h5 class="card-title"><%= @hospede.nome%></h5>
     <label >E-mail: </label><p style="display: inline-block;" class="card-text"><%= @hospede.email%></p>
-    <hr>
+    <br>
     <label>Cpf: </label><p style="display: inline-block;" class="card-text"><%= @hospede.cpf%></p>
-    <hr>
+    <br>
     <label>Celular: </label><p style="display: inline-block;" class="card-text"><%= @hospede.celular%></p>
+    <% unless @hospede.endereco.nil?%>
+    <h6 class="card-title">Endereço</h6>
+      <label >Rua: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.rua%></p>
+      <br>
+      <label >Bairro: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.bairro%></p>
+      <br>
+      <label >Número: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.numero%></p>
+      <br>
+      <label >Cidade: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.cidade%></p>
+      <br>
+      <label >Cep: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.cep%></p>
+      <br>
+      <label >Pais: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.pais%></p>
+      <br>
+      <label >Complemento: </label><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.complemento%></p>
+      <br>
+    <%end%>
+    
   </div>
   
 </div>
