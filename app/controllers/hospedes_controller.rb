@@ -1,6 +1,6 @@
 require 'hospede_repository.rb'
 class HospedesController < ApplicationController
-    before_action :get_hospede, only: [:show]
+    before_action :get_hospede, only: [:show, :destroy]
     def index
         @hospedes = HospedeRepository.get_all_hospedes
     end
@@ -24,6 +24,11 @@ class HospedesController < ApplicationController
         end
     end
     
+    def destroy
+        #Status do hospede fica igual a inactive
+        @hospede.inactive!
+        redirect_to hospedes_path
+    end
 
 
     private

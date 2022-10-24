@@ -1,7 +1,7 @@
 class HospedeRepository
     class << self
         def get_all_hospedes
-            Hospede.all
+            Hospede.where(status: :active).order(created_at: :desc)
         end
 
         def get_hospede_by_id(id)
