@@ -1,13 +1,12 @@
-require 'hospede_repository.rb'
+
 class HospedesController < ApplicationController
     before_action :get_hospede, only: [:show, :destroy]
     def index
-        @hospedes = HospedeRepository.get_all_hospedes
+        @hospedes = Hospede.where(status: :active).order(created_at: :desc)
     end
 
 
     def show
-        
     end
 
     def new
@@ -15,9 +14,8 @@ class HospedesController < ApplicationController
     end
 
     def create
-        @hospede = HospedeRepository.create_hospede(valid_params)
+        @hospede = HospedeCreator.new(valid_params).create_hospede
         if @hospede.persisted?
-            
             redirect_to new_hospede_endereco_path(@hospede.id)
         else
             render :new, status: :unprocessable_entity
@@ -38,6 +36,6 @@ class HospedesController < ApplicationController
     end
 
     def get_hospede
-        @hospede = HospedeRepository.get_hospede_by_id(params[:id])
+        @hospede = Hospede.find(params[:id])
     end
 end
