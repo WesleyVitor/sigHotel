@@ -1,6 +1,6 @@
 
 class HospedesController < ApplicationController
-    before_action :get_hospede, only: [:show, :destroy]
+    before_action :get_hospede, only: [:show, :destroy, :edit]
     def index
         @hospedes = Hospede.where(status: :active).order(created_at: :desc)
     end
@@ -26,6 +26,20 @@ class HospedesController < ApplicationController
         #Status do hospede fica igual a inactive
         @hospede.inactive!
         redirect_to hospedes_path
+    end
+
+    def edit
+
+    end
+
+    def update
+        @hospede = Hospede.find(params[:id])
+        if @hospede.update(valid_params)
+            redirect_to hospede_path
+        else
+            render :edit, status: :unprocessable_entity
+        end
+
     end
 
 
