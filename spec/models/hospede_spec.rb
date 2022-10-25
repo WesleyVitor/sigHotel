@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: hospedes
+#
+#  id         :integer          not null, primary key
+#  nome       :string
+#  cpf        :string           not null
+#  email      :string
+#  status     :string
+#  celular    :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Hospede, type: :model do
