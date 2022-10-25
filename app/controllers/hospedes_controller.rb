@@ -1,6 +1,6 @@
 
 class HospedesController < ApplicationController
-    before_action :get_hospede, only: [:show, :destroy, :edit]
+    before_action :get_hospede, only: [:show, :destroy, :edit, :update]
     def index
         @hospedes = Hospede.where(status: :active).order(created_at: :desc)
     end
@@ -33,8 +33,7 @@ class HospedesController < ApplicationController
     end
 
     def update
-        @hospede = Hospede.find(params[:id])
-        if @hospede.update(valid_params)
+        if HospedeUpdater.new(valid_params).update_hospede(@hospede)
             redirect_to hospede_path
         else
             render :edit, status: :unprocessable_entity
@@ -45,7 +44,6 @@ class HospedesController < ApplicationController
 
     private
     def valid_params
-
         params.require(:hospede).permit(:nome, :cpf, :email, :celular, :status)
     end
 
