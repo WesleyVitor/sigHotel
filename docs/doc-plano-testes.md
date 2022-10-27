@@ -65,6 +65,11 @@ Tipo de teste      | Duração | data de início | data de término
 Teste de unitário    |         | 01/09/2022     | 24/10/2022
 Teste de integração    |         | 01/09/2022     | 24/10/2022
 Test de sistema  |         | 11/10/2022     | 31/10/2022
-executar teste     |         | 11/10/2022     | 31/10/2022
+
+## 6 - Referências
+
+https://www.cin.ufpe.br/~gta/rup-vc/extend.formal_resources/guidances/examples/resources/test_plan_v1.htm#_Toc449511181
+
+https://github.com/danielle8farias-zz/plano-de-testes
 
 
