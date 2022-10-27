@@ -34,6 +34,10 @@ jobs:
       - name: Install packages
         run: |
           yarn install --pure-lockfile
+      - name: Build
+        run: |
+          yarn build
+          yarn build:css
       # Add or replace dependences
       - name: Run bundle install
         run: |
