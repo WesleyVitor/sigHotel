@@ -49,6 +49,10 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
+      - name: Fix code coverage paths
+        working-directory: ./coverage
+        run: |
+          sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' coverage.json
       # Add or replace sonarqube
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
