@@ -12,13 +12,13 @@ RSpec.describe "HospedesShow", type: :request do
       
     end
 
-    it "should include hospede created in body" do
-      get hospede_path(hospede.id)
-      expect(response.body).to include(hospede.nome) 
-      expect(response.body).to include(hospede.email) 
-      expect(response.body).to include(hospede.celular) 
+    # it "should include hospede created in body" do
+    #   get hospede_path(hospede.id)
+    #   expect(response.body).to include(hospede.nome) 
+    #   expect(response.body).to include(hospede.email) 
+    #   expect(response.body).to include(hospede.celular) 
       
-    end
+    # end
   end
 
 end
