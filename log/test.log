@@ -378,3 +378,358 @@ Processing by HospedesController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 155.8ms | Allocations: 20661)
 Completed 200 OK in 164ms (Views: 158.7ms | ActiveRecord: 0.0ms | Allocations: 23892)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "enderecos"[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "enderecos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "rua" varchar, "numero" varchar, "complemento" varchar, "bairro" varchar, "cidade" varchar, "estado" varchar, "pais" varchar, "cep" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "hospede_id" integer)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE INDEX "index_enderecos_on_hospede_id" ON "enderecos" ("hospede_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "hospedes"[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "hospedes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar NOT NULL, "email" varchar, "status" varchar, "celular" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aenderecos" ("id" integer NOT NULL PRIMARY KEY, "rua" varchar DEFAULT NULL, "numero" varchar DEFAULT NULL, "complemento" varchar DEFAULT NULL, "bairro" varchar DEFAULT NULL, "cidade" varchar DEFAULT NULL, "estado" varchar DEFAULT NULL, "pais" varchar DEFAULT NULL, "cep" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "hospede_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aenderecos_on_hospede_id" ON "aenderecos" ("hospede_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aenderecos" ("id","rua","numero","complemento","bairro","cidade","estado","pais","cep","created_at","updated_at","hospede_id")
+                     SELECT "id","rua","numero","complemento","bairro","cidade","estado","pais","cep","created_at","updated_at","hospede_id" FROM "enderecos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "enderecos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "enderecos" ("id" integer NOT NULL PRIMARY KEY, "rua" varchar DEFAULT NULL, "numero" varchar DEFAULT NULL, "complemento" varchar DEFAULT NULL, "bairro" varchar DEFAULT NULL, "cidade" varchar DEFAULT NULL, "estado" varchar DEFAULT NULL, "pais" varchar DEFAULT NULL, "cep" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "hospede_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5468938f83"
+FOREIGN KEY ("hospede_id")
+  REFERENCES "hospedes" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_enderecos_on_hospede_id" ON "enderecos" ("hospede_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "enderecos" ("id","rua","numero","complemento","bairro","cidade","estado","pais","cep","created_at","updated_at","hospede_id")
+                     SELECT "id","rua","numero","complemento","bairro","cidade","estado","pais","cep","created_at","updated_at","hospede_id" FROM "aenderecos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aenderecos"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221022165902)[0m
+  [1m[35m (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221010123031),
+(20221015150209),
+(20221015150501),
+(20221022165817);
+
+[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-10-27 19:33:43.493708"], ["updated_at", "2022-10-27 19:33:43.493708"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "0234d49457278e645e2705e48bda07cba77ca9e4"], ["created_at", "2022-10-27 19:33:43.505418"], ["updated_at", "2022-10-27 19:33:43.505418"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1231"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1232"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1233"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Load (0.2ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Create (0.3ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Lenard Erdman"], ["cpf", "1234"], ["email", "MyString"], ["status", "active"], ["celular", "1-478-747-6663"], ["created_at", "2022-10-27 19:33:44.829061"], ["updated_at", "2022-10-27 19:33:44.829061"]]
+  [1m[36mEndereco Create (0.3ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Turner View"], ["numero", "1958"], ["complemento", "A"], ["bairro", "Royal Gardens"], ["cidade", "South Glenda"], ["estado", "Pennsylvania"], ["pais", "Uzbekistan"], ["cep", "97175"], ["created_at", "2022-10-27 19:33:44.835323"], ["updated_at", "2022-10-27 19:33:44.835323"], ["hospede_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1234"], ["LIMIT", 1]]
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1234"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.2ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Keebler Junction"], ["numero", "6933"], ["complemento", "A"], ["bairro", "Pine Court"], ["cidade", "Stevenview"], ["estado", "Mississippi"], ["pais", "Nicaragua"], ["cep", "53346"], ["created_at", "2022-10-27 19:33:44.854652"], ["updated_at", "2022-10-27 19:33:44.854652"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1235"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Pres. Stacia Armstrong"], ["cpf", "1235"], ["email", "MyString"], ["status", "active"], ["celular", "818.516.0231"], ["created_at", "2022-10-27 19:33:44.858014"], ["updated_at", "2022-10-27 19:33:44.858014"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:44.859383"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/hospedes/1/enderecos" for 127.0.0.1 at 2022-10-27 16:33:44 -0300
+Processing by EnderecosController#create as HTML
+  Parameters: {"endereco"=>{"rua"=>"Altenwerth Harbors", "numero"=>"33550", "complemento"=>"A", "bairro"=>"University Court", "cidade"=>"Dibbertfort", "estado"=>"Oregon", "pais"=>"Turkey", "cep"=>"88733-0442"}, "hospede_id"=>"1"}
+  [1m[36mHospede Load (0.2ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEndereco Load (0.4ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."hospede_id" = ? LIMIT ?[0m  [["hospede_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:44.998034"], ["hospede_id", nil], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.1ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Altenwerth Harbors"], ["numero", "33550"], ["complemento", "A"], ["bairro", "University Court"], ["cidade", "Dibbertfort"], ["estado", "Oregon"], ["pais", "Turkey"], ["cep", "88733-0442"], ["created_at", "2022-10-27 19:33:45.000455"], ["updated_at", "2022-10-27 19:33:45.000455"], ["hospede_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes
+Completed 302 Found in 31ms (ActiveRecord: 1.1ms | Allocations: 5339)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEndereco Load (0.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" ORDER BY "enderecos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEndereco Load (0.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."hospede_id" = ? LIMIT ?[0m  [["hospede_id", 1], ["LIMIT", 1]]
+  [1m[36mEndereco Load (0.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" ORDER BY "enderecos"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.3ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Kub Field"], ["numero", "9327"], ["complemento", "A"], ["bairro", "Royal Heights"], ["cidade", "Adamsland"], ["estado", "Pennsylvania"], ["pais", "Mozambique"], ["cep", "58734"], ["created_at", "2022-10-27 19:33:45.030725"], ["updated_at", "2022-10-27 19:33:45.030725"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1236"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Terrance Senger"], ["cpf", "1236"], ["email", "MyString"], ["status", "active"], ["celular", "240-646-4617"], ["created_at", "2022-10-27 19:33:45.033854"], ["updated_at", "2022-10-27 19:33:45.033854"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.035122"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/hospedes/1/enderecos/new" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by EnderecosController#new as HTML
+  Parameters: {"hospede_id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering enderecos/new.html.erb within layouts/application
+  [1m[36mEndereco Load (0.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."hospede_id" = ? LIMIT ?[0m  [["hospede_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Update (0.2ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.066427"], ["hospede_id", nil], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendered enderecos/_form.html.erb (Duration: 91.7ms | Allocations: 24314)
+  Rendered enderecos/new.html.erb within layouts/application (Duration: 95.2ms | Allocations: 24904)
+  Rendered layout layouts/application.html.erb (Duration: 260.6ms | Allocations: 47136)
+Completed 200 OK in 277ms (Views: 268.5ms | ActiveRecord: 0.5ms | Allocations: 49976)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.2ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Streich Tunnel"], ["numero", "51240"], ["complemento", "A"], ["bairro", "Park Court"], ["cidade", "Port Raulview"], ["estado", "Virginia"], ["pais", "Oman"], ["cep", "97307-3343"], ["created_at", "2022-10-27 19:33:45.325243"], ["updated_at", "2022-10-27 19:33:45.325243"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1237"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.4ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Rachelle Vandervort IV"], ["cpf", "1237"], ["email", "MyString"], ["status", "active"], ["celular", "388-723-8879"], ["created_at", "2022-10-27 19:33:45.327965"], ["updated_at", "2022-10-27 19:33:45.327965"]]
+  [1m[36mEndereco Update (0.2ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.330195"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "1237"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mHospede Update (0.1ms)[0m  [1m[33mUPDATE "hospedes" SET "status" = ?, "updated_at" = ? WHERE "hospedes"."id" = ?[0m  [["status", "inactive"], ["updated_at", "2022-10-27 19:33:45.338214"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1244)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.3ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Luettgen Passage"], ["numero", "701"], ["complemento", "A"], ["bairro", "Paradise Court"], ["cidade", "North Jonah"], ["estado", "Louisiana"], ["pais", "Congo"], ["cep", "66372"], ["created_at", "2022-10-27 19:33:45.349293"], ["updated_at", "2022-10-27 19:33:45.349293"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "1239"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.1ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Shad Beatty"], ["cpf", "1239"], ["email", "MyString"], ["status", "active"], ["celular", "(877) 867-4874"], ["created_at", "2022-10-27 19:33:45.352412"], ["updated_at", "2022-10-27 19:33:45.352412"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.353636"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#update as HTML
+  Parameters: {"hospede"=>{"email"=>"MyString"}, "id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "1239"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1090)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.3ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Beatty Flat"], ["numero", "8393"], ["complemento", "A"], ["bairro", "Eagle Village"], ["cidade", "North Francene"], ["estado", "New Jersey"], ["pais", "Netherlands Antilles"], ["cep", "37536"], ["created_at", "2022-10-27 19:33:45.368907"], ["updated_at", "2022-10-27 19:33:45.368907"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12311"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Miss Edwardo Upton"], ["cpf", "12311"], ["email", "MyString"], ["status", "active"], ["celular", "868.502.9039"], ["created_at", "2022-10-27 19:33:45.371881"], ["updated_at", "2022-10-27 19:33:45.371881"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.373273"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#update as HTML
+  Parameters: {"hospede"=>{"nome"=>"Mr. Fay Stark"}, "id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "12311"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mHospede Update (0.1ms)[0m  [1m[33mUPDATE "hospedes" SET "nome" = ?, "updated_at" = ? WHERE "hospedes"."id" = ?[0m  [["nome", "Mr. Fay Stark"], ["updated_at", "2022-10-27 19:33:45.378560"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 935)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.4ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Bernie Avenue"], ["numero", "89401"], ["complemento", "A"], ["bairro", "Willow Court"], ["cidade", "New Love"], ["estado", "Hawaii"], ["pais", "Chile"], ["cep", "83132-3555"], ["created_at", "2022-10-27 19:33:45.389430"], ["updated_at", "2022-10-27 19:33:45.389430"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12313"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Sonia Kilback"], ["cpf", "12313"], ["email", "MyString"], ["status", "active"], ["celular", "308-528-2079"], ["created_at", "2022-10-27 19:33:45.392749"], ["updated_at", "2022-10-27 19:33:45.392749"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.394039"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#update as HTML
+  Parameters: {"hospede"=>{"cpf"=>"12312"}, "id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "12312"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mHospede Update (0.2ms)[0m  [1m[33mUPDATE "hospedes" SET "cpf" = ?, "updated_at" = ? WHERE "hospedes"."id" = ?[0m  [["cpf", "12312"], ["updated_at", "2022-10-27 19:33:45.404920"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes/1
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 935)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.3ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Larkin Hills"], ["numero", "435"], ["complemento", "A"], ["bairro", "Autumn Court"], ["cidade", "Cummingsburgh"], ["estado", "Tennessee"], ["pais", "Morocco"], ["cep", "06726"], ["created_at", "2022-10-27 19:33:45.420773"], ["updated_at", "2022-10-27 19:33:45.420773"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12315"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Palma Kuhlman"], ["cpf", "12315"], ["email", "MyString"], ["status", "active"], ["celular", "1-205-305-7717"], ["created_at", "2022-10-27 19:33:45.425201"], ["updated_at", "2022-10-27 19:33:45.425201"]]
+  [1m[36mEndereco Update (0.2ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.427131"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#update as HTML
+  Parameters: {"hospede"=>{"celular"=>"1-887-101-8413"}, "id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "12315"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mHospede Update (0.2ms)[0m  [1m[33mUPDATE "hospedes" SET "celular" = ?, "updated_at" = ? WHERE "hospedes"."id" = ?[0m  [["celular", "1-887-101-8413"], ["updated_at", "2022-10-27 19:33:45.436021"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms | Allocations: 916)
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started POST "/hospedes" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#create as HTML
+  Parameters: {"hospede"=>{"nome"=>"Miss Emerson Russel", "cpf"=>"12316", "email"=>"MyString", "status"=>"active", "celular"=>"(818) 698-7515"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12316"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.4ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Miss Emerson Russel"], ["cpf", "12316"], ["email", "MyString"], ["status", "active"], ["celular", "(818) 698-7515"], ["created_at", "2022-10-27 19:33:45.452458"], ["updated_at", "2022-10-27 19:33:45.452458"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/hospedes/1/enderecos/new
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms | Allocations: 1127)
+  [1m[36mHospede Load (0.3ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" ORDER BY "hospedes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/hospedes/new" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/new.html.erb within layouts/application
+  Rendered hospedes/_form.html.erb (Duration: 15.2ms | Allocations: 9418)
+  Rendered hospedes/new.html.erb within layouts/application (Duration: 29.2ms | Allocations: 10079)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 11088)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 11781)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.5ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Altenwerth Orchard"], ["numero", "1662"], ["complemento", "A"], ["bairro", "Willow Oaks"], ["cidade", "Thedamouth"], ["estado", "Rhode Island"], ["pais", "Northern Mariana Islands"], ["cep", "54777"], ["created_at", "2022-10-27 19:33:45.505708"], ["updated_at", "2022-10-27 19:33:45.505708"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12317"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.4ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Pres. Eleonor Sauer"], ["cpf", "12317"], ["email", "MyString"], ["status", "active"], ["celular", "(350) 630-6839"], ["created_at", "2022-10-27 19:33:45.510881"], ["updated_at", "2022-10-27 19:33:45.510881"]]
+  [1m[36mEndereco Update (0.2ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.514419"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/show.html.erb within layouts/application
+  [1m[36mEndereco Load (0.1ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."hospede_id" = ? LIMIT ?[0m  [["hospede_id", 1], ["LIMIT", 1]]
+  Rendered hospedes/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1822)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 2282)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEndereco Create (0.6ms)[0m  [1m[32mINSERT INTO "enderecos" ("rua", "numero", "complemento", "bairro", "cidade", "estado", "pais", "cep", "created_at", "updated_at", "hospede_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rua", "Nathaniel Ford"], ["numero", "763"], ["complemento", "A"], ["bairro", "Autumn Gardens"], ["cidade", "Lake Sunniside"], ["estado", "Michigan"], ["pais", "Virgin Islands, U.S."], ["cep", "48892"], ["created_at", "2022-10-27 19:33:45.532818"], ["updated_at", "2022-10-27 19:33:45.532818"], ["hospede_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12318"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.2ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Regina Ward"], ["cpf", "12318"], ["email", "MyString"], ["status", "active"], ["celular", "369.524.1065"], ["created_at", "2022-10-27 19:33:45.538405"], ["updated_at", "2022-10-27 19:33:45.538405"]]
+  [1m[36mEndereco Update (0.1ms)[0m  [1m[33mUPDATE "enderecos" SET "updated_at" = ?, "hospede_id" = ? WHERE "enderecos"."id" = ?[0m  [["updated_at", "2022-10-27 19:33:45.539884"], ["hospede_id", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/hospedes/1" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes" WHERE "hospedes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/show.html.erb within layouts/application
+  [1m[36mEndereco Load (0.2ms)[0m  [1m[34mSELECT "enderecos".* FROM "enderecos" WHERE "enderecos"."hospede_id" = ? LIMIT ?[0m  [["hospede_id", 1], ["LIMIT", 1]]
+  Rendered hospedes/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 497)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1437)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 1820)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-27 16:33:45 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes" WHERE "hospedes"."status" = ?[0m  [["status", "active"]]
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 620)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1573)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 2023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12319"], ["LIMIT", 1]]
+  [1m[36mHospede Create (0.5ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Msgr. Martine Heller"], ["cpf", "12319"], ["email", "MyString"], ["status", "active"], ["celular", "1-662-616-7072"], ["created_at", "2022-10-27 19:33:45.586040"], ["updated_at", "2022-10-27 19:33:45.586040"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mHospede Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12320"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mHospede Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12321"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mHospede Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "12322"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mHospede Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mHospede Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
