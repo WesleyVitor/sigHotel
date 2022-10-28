@@ -52,7 +52,7 @@ jobs:
       - name: fix code coverage paths
         working-directory: ./coverage
         run: |  
-          cp /home/runner/work/sigHotel/sigHotel/coverage/.resultset.json github/worspace/
+          cp /home/runner/work/sigHotel/sigHotel/coverage/.resultset.json /github/worspace
       # Add or replace sonarqube
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
