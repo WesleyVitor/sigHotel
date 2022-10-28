@@ -52,7 +52,9 @@ jobs:
       - name: fix code coverage paths
         working-directory: ./coverage
         run: |  
-          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' .resultset.json
+          sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' .resultset.json
+          env:
+            GITHUB_WORKSPACE: "/home/runner/work/sigHotel/sigHotel"
       # Add or replace sonarqube
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
