@@ -50,7 +50,7 @@ jobs:
       - name: Run tests
         run: bundle exec rspec
       - name: fix code coverage paths
-        working-directory: ./coverage
+        #working-directory: ./coverage
         run: |
           ls -a
           cp /home/runner/work/sigHotel/sigHotel/coverage/.resultset.json /home/runner/work/sigHotel/sigHotel/github/worspace
