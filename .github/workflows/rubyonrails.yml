@@ -49,7 +49,11 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
-      
+      - name: fix code coverage paths
+        working-directory: ./coverage
+        run: |  
+          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' lcov.info
+          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' sonar-cloud-reporter.xml
       # Add or replace sonarqube
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
