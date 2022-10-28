@@ -53,6 +53,7 @@ jobs:
         #working-directory: ./coverage
         run: |
           ls -a
+          pwd
           cp /home/runner/work/sigHotel/sigHotel/coverage/.resultset.json /home/runner/work/sigHotel/sigHotel/github/worspace
       # Add or replace sonarqube
       - name: SonarQube Scan
