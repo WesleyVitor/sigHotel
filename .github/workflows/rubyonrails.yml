@@ -53,7 +53,7 @@ jobs:
         working-directory: ./coverage
         run: |
           ls -a
-          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' .resultset.json
+          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' coverage.json
           ls -a
         env:
           GITHUB_WORKSPACE: ""
