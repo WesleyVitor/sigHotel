@@ -14,8 +14,14 @@
 FactoryBot.define do
   factory :hospede do
     nome { Faker::Name.name }
-    sequence(:cpf) { |n| "123#{n}" }
-    email { "MyString" }
+    sequence(:cpf) do |n|
+      if n > 9
+        "123456789#{n}"
+      else
+        "1234567891#{n}"
+      end
+    end
+    email { "#{nome}@gmail.com" }
     status {"active"}
     celular { Faker::PhoneNumber.cell_phone  }
     endereco
