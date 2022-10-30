@@ -23,9 +23,13 @@ class HospedesController < ApplicationController
     end
     
     def destroy
-        #Status do hospede fica igual a inactive
-        @hospede.inactive!
-        redirect_to hospedes_path
+        unless @hospede.nil?
+            #Status do hospede fica igual a inactive
+            @hospede.inactive!
+            redirect_to hospedes_path
+
+        end
+        
     end
 
     def edit
@@ -47,7 +51,7 @@ class HospedesController < ApplicationController
         params.require(:hospede).permit(:nome, :cpf, :email, :celular, :status)
     end
 
-    def get_hospede
-        @hospede = Hospede.find(params[:id])
+    def get_hospede    
+        @hospede = Hospede.find_by_id(params[:id])
     end
 end
