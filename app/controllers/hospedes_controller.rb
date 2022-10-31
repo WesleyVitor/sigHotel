@@ -26,7 +26,7 @@ class HospedesController < ApplicationController
         unless @hospede.nil?
             #Status do hospede fica igual a inactive
             @hospede.inactive!
-            redirect_to hospedes_path
+            redirect_to hospedes_path, notice: "Hóspede #{@hospede.nome} foi inativado"
 
         end
         

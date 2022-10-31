@@ -6,6 +6,7 @@ class HospedeCreator
 
     def create_hospede
         @hospede = Hospede.new(@params)
+        @hospede.status = "active"
         @hospede.save
 
         @hospede
