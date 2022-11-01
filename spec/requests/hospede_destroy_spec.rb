@@ -12,9 +12,9 @@ RSpec.describe "HospedeDestroy", type: :request do
 
   context "when not exist a hospede persisted" do
     it "should hospede finded be nil" do
-      hospede = FactoryBot.build(:hospede, id:1)
-      delete hospede_path(hospede.id)
-      hospede = Hospede.find_by_id(hospede.id)
+      hospede = FactoryBot.build(:hospede)
+      delete hospede_path(1)
+      hospede = Hospede.find_by_id(1)
       expect(hospede).to be_nil  
     end
   end
