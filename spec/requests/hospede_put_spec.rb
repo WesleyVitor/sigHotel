@@ -47,5 +47,22 @@ RSpec.describe "HospedePut", type: :request do
         end
     end
     
+    context "when not have valid params" do
+        before do
+            hospede = FactoryBot.create(:hospede)
+            
+            put hospede_path(hospede.id), 
+                params:{
+                    hospede: {
+                        email: nil
+                    }
+                }
+        end
 
+        it "should return status Unprocessable Entity" do
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+    end
+    
 end
