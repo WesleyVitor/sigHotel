@@ -13,7 +13,9 @@
 
 ## 1 - Introdução
 
-Este documento descreve os user stories a testar, os  tipos de testes definidos para cada iteração, estratégias dos testes,os software a serem empregados e o cronograma dos testes ao longo do projeto. As seções referentes aos user stories, recursos e cronograma servem para permitir ao gerente do projeto acompanhar a evolução dos testes.
+Este documento descreve os user stories a testar, os  tipos de testes definidos para cada iteração, estratégias dos testes,os software a serem empregados e o cronograma dos testes ao longo do projeto. As seções referentes aos user stories, recursos e cronograma servem para permitir ao gerente do projeto acompanhar a evolução dos testes. 
+
+Para todas as iterações o projeto deve ter pelo menos um porcentagem superior a 70% de cobertura de testes, afim de manter a qualidade do projeto.
 
 Com esse documento, você deve:
 - Listar os Requisitos a testar.

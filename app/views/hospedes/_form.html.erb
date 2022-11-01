@@ -1,0 +1,12 @@
+<div class="text-left mt-3">
+
+    <%= simple_form_for hospede  do |f| %>
+        
+        <%= f.input :nome %>
+        <%= f.input :cpf %>
+        <%= f.input :email %>
+        <%= f.input :celular %>
+        <%= f.submit 'Salvar Hóspede', input_html: {class: 'btn btn-primary'}%>
+    <% end %>
+   
+</div>

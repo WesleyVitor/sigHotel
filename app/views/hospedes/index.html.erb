@@ -1,0 +1,39 @@
+
+
+<div class="text-left mt-3">
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<div class="d-flex justify-content-between">
+<h1>Listagem de Hóspedes</h1>
+<button>
+ <%=  link_to 'Cadastrar Hóspede', new_hospede_path, class: 'btn btn--secundary'%>
+
+</button>
+</div>
+
+<% if @hospedes.count > 0%>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= turbo_frame_tag "hospedes" do%>
+                <%= render @hospedes %>
+            <% end %>
+            
+        </tbody>
+    </table>
+<% else%>
+    <h3>Não existe hóspedes cadastrados</h3>
+
+<%end%>
+
+</div>

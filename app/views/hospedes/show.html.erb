@@ -1,0 +1,48 @@
+
+
+<div class="text-left mt-3">
+<%= link_to sanitize("&larr; Back to Hóspedes"), hospedes_path %>
+<% unless @hospede.nil? %>
+  <h1>Hóspede <%= @hospede.nome%></h1>
+
+
+    <div class="card" style="width: 60rem;">
+    <div class="card-body">
+      <h5 class="card-title">Dados Pessoais</h5>
+      <strong>E-mail: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.email%></p>
+      <br>
+      <strong>Cpf: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.cpf%></p>
+      <br>
+      <strong>Celular: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.celular%></p>
+    </div>
+    </div>
+  <% unless @hospede.endereco.nil?%>
+    <div class="card" style="width: 60rem;">
+    <div class="card-body">
+    <h5 class="card-title">Endereço</h5>
+      <strong >Rua: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.rua%></p>
+        <br>
+        <strong >Bairro: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.bairro%></p>
+        <br>
+        <strong >Número: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.numero%></p>
+        <br>
+        <strong >Cidade: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.cidade%></p>
+        <br>
+        <strong >Cep: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.cep%></p>
+        <br>
+        <strong >Pais: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.pais%></p>
+        <br>
+        <strong >Complemento: </strong><p style="display: inline-block;" class="card-text"><%= @hospede.endereco.complemento%></p>
+        <br>
+    </div>
+    </div>
+  <%end%>
+
+
+<%else%>
+
+  <h2>Não existe esse hóspede cadastrado!</h2>
+
+<% end %>
+    
+

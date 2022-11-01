@@ -59,3 +59,187 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHospedes (20221010123031)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "hospedes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "cpf" varchar NOT NULL, "email" varchar, "status" varchar, "celular" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221010123031"]]
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-10 12:38:16.439227"], ["updated_at", "2022-10-10 12:38:16.439227"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-10-12 14:46:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/wesley/.rvm/gems/ruby-3.1.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/wesley/.rvm/gems/ruby-3.1.1/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.4ms | Allocations: 525)
+Completed 200 OK in 26ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3694)
+
+
+Started GET "/hospdes" for 127.0.0.1 at 2022-10-12 14:46:23 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/hospdes"):
+  
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 14:46:27 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 4726)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4815)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 6672)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `hospedes' for #<ActionView::Base:0x0000000000b590>
+
+'.freeze; if hospedes.count > 0
+             ^^^^^^^^
+Did you mean?  hospedes_url):
+    1: 
+    2: <h1>Hóspedes</h1>
+    3: 
+    4: <% if hospedes.count > 0%>
+    5:     <% hospedes.each do |hospede|%>
+    6:         <label>Nome:</label><p><%= hospede.nome%></p>
+    7:     <%end%>
+  
+app/views/hospedes/index.html.erb:4
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 14:47:14 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:4
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 65.8ms | Allocations: 1584)
+  Rendered layout layouts/application.html.erb (Duration: 1038.3ms | Allocations: 107819)
+Completed 200 OK in 1079ms (Views: 1046.2ms | ActiveRecord: 13.9ms | Allocations: 109579)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? LIMIT ?[0m  [["cpf", "123"], ["LIMIT", 1]]
+  [1m[36mHospede Create (3.8ms)[0m  [1m[32mINSERT INTO "hospedes" ("nome", "cpf", "email", "status", "celular", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "JOão"], ["cpf", "123"], ["email", "j@gmail.com"], ["status", nil], ["celular", "9892"], ["created_at", "2022-10-12 17:48:22.691650"], ["updated_at", "2022-10-12 17:48:22.691650"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHospede Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "hospedes" WHERE "hospedes"."cpf" = ? AND "hospedes"."id" != ? LIMIT ?[0m  [["cpf", "123"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 14:48:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:4
+  [1m[36mHospede Load (0.1ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:5
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 7562)
+  Rendered layout layouts/application.html.erb (Duration: 91.9ms | Allocations: 30384)
+Completed 200 OK in 106ms (Views: 94.6ms | ActiveRecord: 1.0ms | Allocations: 34621)
+
+
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:03:55 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:6
+  [1m[36mHospede Load (0.6ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:7
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 138.5ms | Allocations: 1609)
+  Rendered layout layouts/application.html.erb (Duration: 527.1ms | Allocations: 27926)
+Completed 200 OK in 741ms (Views: 643.6ms | ActiveRecord: 12.4ms | Allocations: 28796)
+
+
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:05:38 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (7.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:6
+  [1m[36mHospede Load (0.4ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:7
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 73.6ms | Allocations: 1409)
+  Rendered layout layouts/application.html.erb (Duration: 157.4ms | Allocations: 4635)
+Completed 200 OK in 225ms (Views: 186.3ms | ActiveRecord: 8.1ms | Allocations: 5476)
+
+
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:05:44 -0300
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:6
+  [1m[36mHospede Load (0.2ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:7
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1405)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 4610)
+Completed 200 OK in 36ms (Views: 32.8ms | ActiveRecord: 0.6ms | Allocations: 5449)
+
+
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:08:36 -0300
+Processing by HospedesController#index as HTML
+Completed 500 Internal Server Error in 40ms (Allocations: 2523)
+
+
+  
+NameError (uninitialized constant HospedesController::HospedeRepository
+
+        HospedeRepository.get_all_hospedes
+        ^^^^^^^^^^^^^^^^^):
+  
+app/controllers/hospedes_controller.rb:3:in `index'
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:09:03 -0300
+  
+SyntaxError (/home/wesley/dev/projetos/sigHotel/app/controllers/hospedes_controller.rb:1: class/module name must be CONSTANT
+module repository
+       ^~~~~~~~~~
+):
+  
+app/controllers/hospedes_controller.rb:1: class/module name must be CONSTANT
+app/controllers/hospedes_controller.rb:1: class/module name must be CONSTANT
+app/controllers/hospedes_controller.rb:1: class/module name must be CONSTANT
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:09:11 -0300
+Processing by HospedesController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2435)
+
+
+  
+NameError (uninitialized constant HospedesController::HospedeRepository
+
+        HospedeRepository.get_all_hospedes
+        ^^^^^^^^^^^^^^^^^):
+  
+app/controllers/hospedes_controller.rb:4:in `index'
+Started PUT "/__web_console/repl_sessions/c61555d94c02dc0b8d3046ec1429f264" for 127.0.0.1 at 2022-10-12 15:09:25 -0300
+Started PUT "/__web_console/repl_sessions/c61555d94c02dc0b8d3046ec1429f264" for 127.0.0.1 at 2022-10-12 15:09:29 -0300
+Started PUT "/__web_console/repl_sessions/c61555d94c02dc0b8d3046ec1429f264" for 127.0.0.1 at 2022-10-12 15:09:38 -0300
+Started PUT "/__web_console/repl_sessions/c61555d94c02dc0b8d3046ec1429f264" for 127.0.0.1 at 2022-10-12 15:09:44 -0300
+Started PUT "/__web_console/repl_sessions/c61555d94c02dc0b8d3046ec1429f264" for 127.0.0.1 at 2022-10-12 15:09:44 -0300
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:10:08 -0300
+Processing by HospedesController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2449)
+
+
+  
+NameError (uninitialized constant HospedesController::HospedeRepository
+
+        @hospedes = HospedeRepository.get_all_hospedes
+                    ^^^^^^^^^^^^^^^^^):
+  
+app/controllers/hospedes_controller.rb:4:in `index'
+  [1m[36mHospede Load (0.3ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+Started GET "/hospedes" for 127.0.0.1 at 2022-10-12 15:15:59 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HospedesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering hospedes/index.html.erb within layouts/application
+  [1m[36mHospede Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:6
+  [1m[36mHospede Load (0.2ms)[0m  [1m[34mSELECT "hospedes".* FROM "hospedes"[0m
+  ↳ app/views/hospedes/index.html.erb:7
+  Rendered hospedes/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 7574)
+  Rendered layout layouts/application.html.erb (Duration: 224.1ms | Allocations: 33790)
+Completed 200 OK in 240ms (Views: 227.2ms | ActiveRecord: 1.5ms | Allocations: 38029)
+
+

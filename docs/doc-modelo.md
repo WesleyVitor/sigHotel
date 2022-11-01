@@ -87,7 +87,7 @@ classDiagram
       unpaid
     }
     
-    Guest "*" --> "1" Address
+    Guest "1" --> "1" Address
     Guest "1" --> "1" StatusGuest
     
     Bedroom "*" --> "1" TypeBedroomByBed

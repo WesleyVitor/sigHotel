@@ -24,6 +24,20 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.1.1
+      # Add node
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 17.7.2
+          cache: yarn
+
+      - name: Install packages
+        run: |
+          yarn install --pure-lockfile
+      - name: Build
+        run: |
+          yarn build
+          yarn build:css
       # Add or replace dependences
       - name: Run bundle install
         run: |
@@ -35,6 +49,14 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
+      - name: fix code coverage paths
+        working-directory: ./coverage
+        run: |
+          ls -a
+          sed -i 's/\/home\/runner\/work\/sigHotel\/sigHotel\//\/github\/workspace\//g' coverage.json
+          ls -a
+        env:
+          GITHUB_WORKSPACE: ""
       # Add or replace sonarqube
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
