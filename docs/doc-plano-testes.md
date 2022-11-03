@@ -64,9 +64,9 @@ Para descrever os ambientes de testes em relação aos softewares usados, será 
 
 Tipo de teste      | Duração | data de início | data de término
 -------------------|---------|----------------|-----------------
-Teste de unitário    |         | 01/09/2022     | 24/10/2022
-Teste de integração    |         | 01/09/2022     | 24/10/2022
-Test de sistema  |         | 11/10/2022     | 31/10/2022
+Teste de unitário    |         | 01/09/2022     | 31/12/2022
+Teste de integração    |         | 01/09/2022     | 30/12/2022
+Test de sistema  |         | 01/09/2022     | 31/12/2022
 
 ## 6 - Referências
 
