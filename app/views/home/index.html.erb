@@ -1,7 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to 'Cadastrar Usuário', new_user_registration_path, class: 'link' %>
-<br>
-<%= link_to 'Login', user_session_path, class: 'link' %>
 
-<%= link_to 'Logout', destroy_user_session_path, class: 'link', data:{turbo_method: :delete} %>
+<div class="text-center mt-5">
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<h1>SISTEMA DE GERENCIAMENTO DE HOTEL</h1>
+<%unless user_signed_in?%>
+<button class="bg-warning">
+<%= link_to 'Cadastrar Usuário', new_user_registration_path, class: 'text-decoration-none text-dark' %>
+</button>
+<%end%>
+<br>
+
+
+</div>
