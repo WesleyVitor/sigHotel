@@ -1,0 +1,431 @@
+{
+  "id": "27699eb7-994f-444a-9446-af2711f1e152",
+  "version": "2.0",
+  "name": "Manter-Hóspede",
+  "url": "http://127.0.0.1:3000",
+  "tests": [{
+    "id": "1d0d13aa-9411-4476-97f6-d4211a96adeb",
+    "name": "Manter-hospedess",
+    "commands": [{
+      "id": "bddd7f6e-d3e1-4371-992e-a92f08189e69",
+      "comment": "",
+      "command": "open",
+      "target": "/hospedes",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ec918f0-e7af-4491-bfbe-6f6730d6ef98",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "930x692",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67b9077f-8c36-4081-b1b5-987b3c83cb2c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cadastrar Hóspede",
+      "targets": [
+        ["linkText=Cadastrar Hóspede", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Cadastrar Hóspede')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/hospedes/new')]", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cadastrar Hóspede')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b566d183-f291-4d19-bd86-00cb9d0a8177",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_nome",
+      "targets": [
+        ["id=hospede_nome", "id"],
+        ["name=hospede[nome]", "name"],
+        ["css=#hospede_nome", "css:finder"],
+        ["xpath=//input[@id='hospede_nome']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab1ca8c2-33f0-4a42-96e3-851066bc97c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=hospede_nome",
+      "targets": [
+        ["id=hospede_nome", "id"],
+        ["name=hospede[nome]", "name"],
+        ["css=#hospede_nome", "css:finder"],
+        ["xpath=//input[@id='hospede_nome']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Bruno Augusto"
+    }, {
+      "id": "9ae313e0-84a9-4456-8012-ae2542ff6564",
+      "comment": "",
+      "command": "type",
+      "target": "id=hospede_cpf",
+      "targets": [
+        ["id=hospede_cpf", "id"],
+        ["name=hospede[cpf]", "name"],
+        ["css=#hospede_cpf", "css:finder"],
+        ["xpath=//input[@id='hospede_cpf']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "12298789087"
+    }, {
+      "id": "ccba3bb0-23bb-49f3-836a-fd234c7c9092",
+      "comment": "",
+      "command": "type",
+      "target": "id=hospede_email",
+      "targets": [
+        ["id=hospede_email", "id"],
+        ["name=hospede[email]", "name"],
+        ["css=#hospede_email", "css:finder"],
+        ["xpath=//input[@id='hospede_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "bruno@gmail.com"
+    }, {
+      "id": "aa31e524-bee5-4419-9c55-6ac8343bf9f0",
+      "comment": "",
+      "command": "type",
+      "target": "id=hospede_celular",
+      "targets": [
+        ["id=hospede_celular", "id"],
+        ["name=hospede[celular]", "name"],
+        ["css=#hospede_celular", "css:finder"],
+        ["xpath=//input[@id='hospede_celular']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "99345678"
+    }, {
+      "id": "9054390b-9ecd-4752-9c94-118297cf0f03",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d460663-d15e-4bd5-b313-4001cebfd063",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_rua",
+      "targets": [
+        ["id=endereco_rua", "id"],
+        ["name=endereco[rua]", "name"],
+        ["css=#endereco_rua", "css:finder"],
+        ["xpath=//input[@id='endereco_rua']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30310351-bae0-4362-b7e3-300b7d4d2bd1",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_rua",
+      "targets": [
+        ["id=endereco_rua", "id"],
+        ["name=endereco[rua]", "name"],
+        ["css=#endereco_rua", "css:finder"],
+        ["xpath=//input[@id='endereco_rua']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Severino Costa"
+    }, {
+      "id": "3a6d5778-7705-4404-ac5d-0c210ef8e135",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_numero",
+      "targets": [
+        ["id=endereco_numero", "id"],
+        ["name=endereco[numero]", "name"],
+        ["css=#endereco_numero", "css:finder"],
+        ["xpath=//input[@id='endereco_numero']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "876"
+    }, {
+      "id": "a3f397d8-7428-4c98-9109-b69cef7e673d",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_complemento",
+      "targets": [
+        ["id=endereco_complemento", "id"],
+        ["name=endereco[complemento]", "name"],
+        ["css=#endereco_complemento", "css:finder"],
+        ["xpath=//input[@id='endereco_complemento']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "B"
+    }, {
+      "id": "1a4f358b-b87a-449a-a004-95122e0505fd",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "Mainá"
+    }, {
+      "id": "25a61921-fe7e-4cc8-b26e-30380a287d20",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cidade",
+      "targets": [
+        ["id=endereco_cidade", "id"],
+        ["name=endereco[cidade]", "name"],
+        ["css=#endereco_cidade", "css:finder"],
+        ["xpath=//input[@id='endereco_cidade']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9782bf3c-e29d-4257-ae7c-f41f39ab665c",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_cidade",
+      "targets": [
+        ["id=endereco_cidade", "id"],
+        ["name=endereco[cidade]", "name"],
+        ["css=#endereco_cidade", "css:finder"],
+        ["xpath=//input[@id='endereco_cidade']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "Caicó"
+    }, {
+      "id": "54533c6f-9588-4d62-bed7-1990fd7e7756",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_estado",
+      "targets": [
+        ["id=endereco_estado", "id"],
+        ["name=endereco[estado]", "name"],
+        ["css=#endereco_estado", "css:finder"],
+        ["xpath=//input[@id='endereco_estado']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "RN"
+    }, {
+      "id": "275a17e1-7153-4a41-ba82-20f0416bdfb7",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_pais",
+      "targets": [
+        ["id=endereco_pais", "id"],
+        ["name=endereco[pais]", "name"],
+        ["css=#endereco_pais", "css:finder"],
+        ["xpath=//input[@id='endereco_pais']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": "Brasil"
+    }, {
+      "id": "728866ee-04d4-4998-932c-c049ee8df986",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f1479ba-3d43-4eb1-adfb-1c52c48f2dd5",
+      "comment": "",
+      "command": "type",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": "59300000"
+    }, {
+      "id": "27c7d048-1a74-4d6a-94a6-61651e0d0af2",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(10)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9c05453-959e-4cdc-b77b-f3c8ebd557aa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bruno Augusto",
+      "targets": [
+        ["linkText=Bruno Augusto", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Bruno Augusto')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/hospedes/1')]", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bruno Augusto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d4beaff-e367-40e5-90df-ea88ff4fa8a6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=← Back to Hóspedes",
+      "targets": [
+        ["linkText=← Back to Hóspedes", "linkText"],
+        ["css=.text-left > a", "css:finder"],
+        ["xpath=//a[contains(text(),'← Back to Hóspedes')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/hospedes')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'← Back to Hóspedes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4c664ea-f03e-4a1c-b517-4d2a73441724",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Editar",
+      "targets": [
+        ["linkText=Editar", "linkText"],
+        ["css=.btn-warning > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Editar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/hospedes/1/edit')]", "xpath:href"],
+        ["xpath=//td[4]/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Editar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48bf8b93-66ae-4e41-974f-75561b47effb",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_nome",
+      "targets": [
+        ["id=hospede_nome", "id"],
+        ["name=hospede[nome]", "name"],
+        ["css=#hospede_nome", "css:finder"],
+        ["xpath=//input[@id='hospede_nome']", "xpath:attributes"],
+        ["xpath=//form[@id='edit_hospede_1']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b10b870-9c7b-4dc9-8a95-648c756b870f",
+      "comment": "",
+      "command": "type",
+      "target": "id=hospede_nome",
+      "targets": [
+        ["id=hospede_nome", "id"],
+        ["name=hospede[nome]", "name"],
+        ["css=#hospede_nome", "css:finder"],
+        ["xpath=//input[@id='hospede_nome']", "xpath:attributes"],
+        ["xpath=//form[@id='edit_hospede_1']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Bruno Augusto III"
+    }, {
+      "id": "d9820ebf-1afa-438d-9c01-2a45dc553306",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='edit_hospede_1']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f96d6aa-1cec-4a6e-9b24-2c112cc3c466",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=← Back to Hóspedes",
+      "targets": [
+        ["linkText=← Back to Hóspedes", "linkText"],
+        ["css=.text-left > a", "css:finder"],
+        ["xpath=//a[contains(text(),'← Back to Hóspedes')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/hospedes')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'← Back to Hóspedes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba96c0f3-d796-4eac-a7d7-9eea7fdab4bb",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46c6744a-0187-4491-ac0a-d13995afa13b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Deletar",
+      "targets": [
+        ["linkText=Deletar", "linkText"],
+        ["css=.btn-danger > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Deletar')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/hospedes/1')])[3]", "xpath:href"],
+        ["xpath=//button[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Deletar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5c60ab1-13ca-467c-b94b-738c416ce7b1",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Você tem certeza?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cfd2bf9e-7977-4951-92b6-eefd6c59660a",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3d950446-c9e6-4663-8c17-14ccb6982f72",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1d0d13aa-9411-4476-97f6-d4211a96adeb"]
+  }],
+  "urls": ["http://127.0.0.1:3000/"],
+  "plugins": []
+}

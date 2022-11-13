@@ -76,8 +76,4 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require: false #Para pegar o coverage
-  # Testes de sistema
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
 end
