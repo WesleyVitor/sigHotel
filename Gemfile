@@ -75,5 +75,5 @@ end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'simplecov', require: false
+  gem 'simplecov', require: false #Para pegar o coverage
 end
