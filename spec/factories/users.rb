@@ -25,6 +25,8 @@ FactoryBot.define do
       "email#{n}@gmail.com"
     end
     password {"123456"}
+
+    username {Faker::Name.name}
     
 
   end

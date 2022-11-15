@@ -29,7 +29,6 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
-    puts 'Administrador criado'
     self.role ||= :admin
   end
 end
