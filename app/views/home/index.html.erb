@@ -1,0 +1,17 @@
+
+<div class="text-center mt-5">
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<h1>SISTEMA DE GERENCIAMENTO DE HOTEL</h1>
+<%unless user_signed_in?%>
+<button class="bg-warning">
+<%= link_to 'Cadastrar Usuário', new_user_registration_path, class: 'text-decoration-none text-dark' %>
+</button>
+<%end%>
+<br>
+
+
+</div>

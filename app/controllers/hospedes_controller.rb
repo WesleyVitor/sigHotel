@@ -1,6 +1,8 @@
 
 class HospedesController < ApplicationController
     before_action :get_hospede, only: [:show, :destroy, :edit, :update]
+    before_action :authenticate_user!
+    
     def index
         @hospedes = Hospede.where(status: :active).order(created_at: :desc)
     end

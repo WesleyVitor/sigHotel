@@ -4,8 +4,8 @@
       <td><%= hospede.email%></td>
       <td><%= hospede.celular%></td>
       <td scope="col">
-                <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_hospede_path(hospede)%></button>
-                <button type="button" class="btn btn-danger"><%= link_to "Deletar", hospede_path(hospede), data: {
+                <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_hospede_path(hospede), class: "text-decoration-none"%></button>
+                <button type="button" class="btn btn-danger"><%= link_to "Deletar", hospede_path(hospede),class: "text-decoration-none", data: {
                     turbo_method: :delete,  turbo_confirm: "Você tem certeza?"
                 } %></button>
         </td>
