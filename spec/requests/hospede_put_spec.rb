@@ -71,5 +71,17 @@ RSpec.describe "HospedePut", type: :request do
     
         end
     end
-    
+    describe 'when user have not done login' do
+        let(:hospede) { FactoryBot.create(:hospede)}
+        it "return 302 status to login action" do
+            hospede_email = FactoryBot.attributes_for(:hospede)[:email]
+            put hospede_path(hospede), params:{
+                hospede: {
+                    email: hospede_email
+                }
+            }
+
+            expect(response).to have_http_status(:found)  
+        end
+    end
 end

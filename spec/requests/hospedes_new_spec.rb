@@ -12,4 +12,11 @@ RSpec.describe 'HospedesNew', type: :request do
             expect(response).to have_http_status(200)
         end
     end
+
+    describe 'when user have not done login' do
+        it "return 302 status to login action" do
+        get new_hospede_path
+        expect(response).to have_http_status(:found)
+      end
+    end
 end

@@ -24,6 +24,16 @@ RSpec.describe "HospedeDestroy", type: :request do
       end
     end
   end
+
+  describe 'when user have not done login' do
+    let(:hospede_created){ FactoryBot.create(:hospede)}
+    it "return 302 status to login action" do
+      delete hospede_path(hospede_created.id)
+      hospede = Hospede.find(hospede_created.id)
+      expect(response).to have_http_status(:found)
+      expect(hospede).to be_active
+    end
+  end
   
   
 

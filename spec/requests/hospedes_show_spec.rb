@@ -21,6 +21,24 @@ RSpec.describe "HospedesShow", type: :request do
       end
     end
   end
+
+  describe 'when user have not done login' do
+    context "when exist hospede" do
+      let(:hospede){FactoryBot.create(:hospede)}
+      it "return 302 status" do
+        get hospede_path(hospede.id)
+        expect(response).to have_http_status(:found)
+    end
+    end
+  
+    context "when not exist hospede" do
+      it "return 302 status" do
+        get hospede_path(1)
+        expect(response).to have_http_status(:found)
+      end
+    end
+    
+  end
   
   
     
