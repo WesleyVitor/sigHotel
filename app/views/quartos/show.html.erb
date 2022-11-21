@@ -1,0 +1,31 @@
+
+
+<div class="text-left mt-3">
+<%= link_to "Back to Quartos", quartos_path %>
+<% unless @quarto.nil? %>
+  
+
+    <div class="card" style="width: 60rem;">
+        <div class="card-body">
+        
+        <strong>Número: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.numero_quarto%></p>
+        <br>
+        <strong>max_hospedes: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.max_hospedes%></p>
+        <br>
+        <strong>Descricao: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.descricao%></p>
+        <br>
+        <strong>status: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.status%></p>
+        <br>
+        <strong>tipo_cama: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.tipo_cama%></p>
+        <br>
+        <strong>tipo_caracteristica: </strong><p style="display: inline-block;" class="card-text"><%= @quarto.tipo_caracteristica%></p>
+        </div>
+    </div>
+
+<%else%>
+
+  <h2>Não existe esse quarto cadastrado!</h2>
+
+<% end %>
+    
+

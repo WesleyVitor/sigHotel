@@ -1,0 +1,14 @@
+<div class="text-left mt-3">
+
+    <%= simple_form_for quarto  do |f| %>
+        
+        <%= f.input :numero_quarto %>
+        <%= f.input :max_hospedes %>
+        <%= f.input :descricao %>
+        <%= f.input :status, as: :select, collection: [['Pronto',:pronto], ["Ocupado",:ocupado], ["Reservado",:resevado],["Manutencao",:manutencao]], selected: :first %>
+        <%= f.input :tipo_cama, as: :select, collection: [["Single Room",:single_room], ["Twin Room",:twin_room], ["Couple Room",:couple_room]], selected: :first %>
+        <%= f.input :tipo_caracteristica, as: :select, collection: [["Padrão",:padrao], ["Master",:master], ["Deluxe",:deluxe]],selected: :first %>
+        <%= f.submit 'Salvar Quarto', input_html: {class: 'btn btn-primary'}%>
+    <% end %> 
+   
+</div>
