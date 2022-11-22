@@ -6,11 +6,14 @@
       <td><%= quarto.status%></td>
       <td><%= quarto.tipo_cama%></td>
       <td><%= quarto.tipo_caracteristica%></td>
-      <td scope="col">
-                <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_quarto_path(quarto), class: "text-decoration-none"%></button>
-                <button type="button" class="btn btn-danger"><%= link_to "Deletar", quarto_path(quarto),class: "text-decoration-none", data: {
-                    turbo_method: :delete,  turbo_confirm: "Você tem certeza?"
-                } %></button>
-        </td>
+      <% if policy(quarto).can_use_quarto?%>
+        <td scope="col">
+                    <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_quarto_path(quarto), class: "text-decoration-none"%></button>
+                    <button type="button" class="btn btn-danger"><%= link_to "Deletar", quarto_path(quarto),class: "text-decoration-none", data: {
+                        turbo_method: :delete,  turbo_confirm: "Você tem certeza?"
+                    } %></button>
+            </td>
+
+      <%end%>
     </tr>
 <%end%>

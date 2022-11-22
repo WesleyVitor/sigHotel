@@ -8,10 +8,13 @@
 <% end %>
 <div class="d-flex justify-content-between">
 <h1>Listagem de Quartos</h1>
-<button>
- <%=  link_to 'Cadastrar Quarto', new_quarto_path, class: 'btn btn--secundary text-decoration-none'%>
+<% if policy(Quarto).can_use_quarto?%>
+    <button>
+    <%=  link_to 'Cadastrar Quarto', new_quarto_path, class: 'btn btn--secundary text-decoration-none'%>
 
-</button>
+    </button>
+<%end%>
+
 </div>
 
 <% if @quartos.count > 0%>
@@ -24,7 +27,7 @@
             <th scope="col">status</th>
             <th scope="col">tipo_cama</th>
             <th scope="col">tipo_caracteristica</th>
-            <th scope="col">Ações</th>
+            
             </tr>
         </thead>
         <tbody>

@@ -1,6 +1,8 @@
 class QuartosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_quarto, only: [:show, :edit,:destroy]
+  before_action :authorization, only:[:new,:create,:edit,:update, :destroy]
+  rescue_from Pundit::NotAuthorizedError, with: :unauthorized_user
   def index
     @quartos = Quarto.where(status: :pronto).order(created_at: :desc)
   end
@@ -45,5 +47,13 @@ class QuartosController < ApplicationController
   end
   def params_quarto
     params.require(:quarto).permit(:numero_quarto,:max_hospedes,:descricao,:status,:tipo_cama,:tipo_caracteristica)
+  end
+
+  def authorization
+    authorize Quarto, :can_use_quarto?
+  end
+
+  def unauthorized_user
+    redirect_to quartos_path, notice: "Usuário não autorizado!"
   end
 end
