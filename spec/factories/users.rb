@@ -27,7 +27,7 @@ FactoryBot.define do
     password {"123456"}
 
     username {Faker::Name.name}
-    
+    role {:receptionist}
 
   end
 end

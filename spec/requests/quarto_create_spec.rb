@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'QuartoCreate', type: :request do
     describe "when user is logged in" do
-        let(:user) { create(:user) }
+        let(:user) { create(:user, role: :admin) }
         before :each do
             sign_in user
         end

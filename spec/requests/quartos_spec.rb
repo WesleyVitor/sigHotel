@@ -13,7 +13,7 @@ RSpec.describe "Quartos", type: :request do
 
   describe "GET /new" do
     before do
-      sign_in create(:user)
+      sign_in create(:user, role: :admin)
     end
     it "returns http ok" do
       get "/quartos/new"
@@ -23,7 +23,7 @@ RSpec.describe "Quartos", type: :request do
 
   describe "GET /edit" do
     before do
-      sign_in create(:user)
+      sign_in create(:user,role: :admin)
     end
     it "returns http ok" do
       get "/quartos/edit"
