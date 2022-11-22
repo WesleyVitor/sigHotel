@@ -18,8 +18,8 @@ FactoryBot.define do
     sequence(:numero_quarto) {|n| "#{n}"}
     max_hospedes { [1,2].sample }
     descricao { "lorem lorem" }
-    tipo_cama { [:single_room,:twin_room,:couple_room].sample }
-    tipo_caracteristica { [:padrao,:master,:deluxe].sample }
-    status { :pronto }
+    tipo_cama { ["single_room","twin_room","couple_room"].sample }
+    tipo_caracteristica { ["padrao","master","deluxe"].sample }
+    status { "pronto" }
   end
 end
