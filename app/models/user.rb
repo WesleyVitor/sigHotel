@@ -8,7 +8,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  role                   :integer          default(0)
+#  role                   :integer          default("admin")
 #  username               :string           default("")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -29,6 +29,6 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
-    self.role ||= :admin
+    self.role ||= :receptionist
   end
 end

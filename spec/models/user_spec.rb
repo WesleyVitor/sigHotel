@@ -8,7 +8,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  role                   :integer          default(0)
+#  role                   :integer          default("admin")
 #  username               :string           default("")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -22,5 +22,5 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
 end

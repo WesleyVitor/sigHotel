@@ -1,0 +1,45 @@
+
+
+<div class="text-left mt-3">
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<div class="d-flex justify-content-between">
+<h1>Listagem de Quartos</h1>
+<% if policy(Quarto).can_use_quarto?%>
+    <button>
+    <%=  link_to 'Cadastrar Quarto', new_quarto_path, class: 'btn btn--secundary text-decoration-none'%>
+
+    </button>
+<%end%>
+
+</div>
+
+<% if @quartos.count > 0%>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Número</th>
+            <th scope="col">max_hospedes</th>
+            <th scope="col">descricao</th>
+            <th scope="col">status</th>
+            <th scope="col">tipo_cama</th>
+            <th scope="col">tipo_caracteristica</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <%= turbo_frame_tag "quartos" do%>
+                <%= render @quartos %>
+            <% end %>
+            
+        </tbody>
+    </table>
+<% else%>
+    <h3>Não existe Quartos cadastrados</h3>
+
+<%end%>
+
+</div>
