@@ -17,7 +17,12 @@ no curso de Bacharelado em Sistemas da Informação, pela Universidade Federal d
 
 [Página de instalação do yarn](https://yarnpkg.com/getting-started/install)
 
-##
+### Instale o bundler
+
+```{bat}
+    gem install bundler
+```
+
 ### Instalar as dependências usando o gerenciador Bundler
 
 ```{bat}
