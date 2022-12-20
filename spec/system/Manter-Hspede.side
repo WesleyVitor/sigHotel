@@ -4,24 +4,140 @@
   "name": "Manter-Hóspede",
   "url": "http://127.0.0.1:3000",
   "tests": [{
-    "id": "1d0d13aa-9411-4476-97f6-d4211a96adeb",
-    "name": "Manter-hospedess",
+    "id": "be8214c4-128a-4528-b55f-86a5552bb2e9",
+    "name": "Manter-hospedes",
     "commands": [{
-      "id": "bddd7f6e-d3e1-4371-992e-a92f08189e69",
+      "id": "b025c566-9968-494f-8f23-9e7536e0773b",
       "comment": "",
       "command": "open",
-      "target": "/hospedes",
+      "target": "/",
       "targets": [],
       "value": ""
     }, {
-      "id": "0ec918f0-e7af-4491-bfbe-6f6730d6ef98",
+      "id": "30d80692-ea6a-4724-810d-3ae368a94ec9",
       "comment": "",
       "command": "setWindowSize",
-      "target": "930x692",
+      "target": "930x693",
       "targets": [],
       "value": ""
     }, {
-      "id": "67b9077f-8c36-4081-b1b5-987b3c83cb2c",
+      "id": "24e0809f-ee3e-47e4-897a-2565e97fb404",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler",
+      "targets": [
+        ["css=.navbar-toggler", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e41f478-73f4-415b-afec-7b7e2759dc19",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=li > .text-dark", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/button/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/users/sign_in')]", "xpath:href"],
+        ["xpath=//button/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "509cf598-e1ba-4bd1-9b32-d8475b5e7a4d",
+      "comment": "",
+      "command": "click",
+      "target": "id=user_email",
+      "targets": [
+        ["id=user_email", "id"],
+        ["name=user[email]", "name"],
+        ["css=#user_email", "css:finder"],
+        ["xpath=//input[@id='user_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed817487-5e67-42f1-9ba6-63b40d95bc51",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_email",
+      "targets": [
+        ["id=user_email", "id"],
+        ["name=user[email]", "name"],
+        ["css=#user_email", "css:finder"],
+        ["xpath=//input[@id='user_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "wesley@gmail.com"
+    }, {
+      "id": "4b932dfa-a4c3-4d84-8680-0f6707ea3f97",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_password",
+      "targets": [
+        ["id=user_password", "id"],
+        ["name=user[password]", "name"],
+        ["css=#user_password", "css:finder"],
+        ["xpath=//input[@id='user_password']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456aa"
+    }, {
+      "id": "fd2e8315-a406-49de-a282-9320065dd35b",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//form[@id='new_user']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f9a1126-f829-4de2-9554-c94d7079adf7",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "824c9f63-a78d-4b04-933e-436daffac343",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-toggler-icon",
+      "targets": [
+        ["css=.navbar-toggler-icon", "css:finder"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fb51210-1aa0-4a51-ba71-3eb267b3e68e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hóspedes",
+      "targets": [
+        ["linkText=Hóspedes", "linkText"],
+        ["css=li:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Hóspedes')]", "xpath:link"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/hospedes')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Hóspedes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3acea21-c693-48a3-a2ff-ce2c90418e5f",
       "comment": "",
       "command": "click",
       "target": "linkText=Cadastrar Hóspede",
@@ -35,7 +151,7 @@
       ],
       "value": ""
     }, {
-      "id": "b566d183-f291-4d19-bd86-00cb9d0a8177",
+      "id": "4307f2c0-25d5-4b4b-bd0b-ed0f7343171a",
       "comment": "",
       "command": "click",
       "target": "id=hospede_nome",
@@ -49,7 +165,7 @@
       ],
       "value": ""
     }, {
-      "id": "ab1ca8c2-33f0-4a42-96e3-851066bc97c8",
+      "id": "c03ab120-fac5-4d27-8215-b47943efa0e4",
       "comment": "",
       "command": "type",
       "target": "id=hospede_nome",
@@ -63,7 +179,35 @@
       ],
       "value": "Bruno Augusto"
     }, {
-      "id": "9ae313e0-84a9-4456-8012-ae2542ff6564",
+      "id": "74faa021-bb92-4915-8013-87ef5f6b5b20",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_cpf",
+      "targets": [
+        ["id=hospede_cpf", "id"],
+        ["name=hospede[cpf]", "name"],
+        ["css=#hospede_cpf", "css:finder"],
+        ["xpath=//input[@id='hospede_cpf']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34b72222-588c-412d-8feb-559352ee10e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_cpf",
+      "targets": [
+        ["id=hospede_cpf", "id"],
+        ["name=hospede[cpf]", "name"],
+        ["css=#hospede_cpf", "css:finder"],
+        ["xpath=//input[@id='hospede_cpf']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2180273-5964-435b-9e8a-ca974a80cc12",
       "comment": "",
       "command": "type",
       "target": "id=hospede_cpf",
@@ -75,9 +219,51 @@
         ["xpath=//form[@id='new_hospede']/div[2]/input", "xpath:idRelative"],
         ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "12298789087"
+      "value": "18789876567"
     }, {
-      "id": "ccba3bb0-23bb-49f3-836a-fd234c7c9092",
+      "id": "a45d13b2-25e2-45aa-8361-615eca47fb1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_email",
+      "targets": [
+        ["id=hospede_email", "id"],
+        ["name=hospede[email]", "name"],
+        ["css=#hospede_email", "css:finder"],
+        ["xpath=//input[@id='hospede_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cc9fcfd-549e-4261-bdc7-b51feb16f2bf",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_email",
+      "targets": [
+        ["id=hospede_email", "id"],
+        ["name=hospede[email]", "name"],
+        ["css=#hospede_email", "css:finder"],
+        ["xpath=//input[@id='hospede_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "999d31da-6dcf-40a9-bf3d-d8def91e4523",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=hospede_email",
+      "targets": [
+        ["id=hospede_email", "id"],
+        ["name=hospede[email]", "name"],
+        ["css=#hospede_email", "css:finder"],
+        ["xpath=//input[@id='hospede_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1554a1c-0971-4436-a18f-64abbf31958c",
       "comment": "",
       "command": "type",
       "target": "id=hospede_email",
@@ -91,7 +277,49 @@
       ],
       "value": "bruno@gmail.com"
     }, {
-      "id": "aa31e524-bee5-4419-9c55-6ac8343bf9f0",
+      "id": "bd25aec6-dc4e-403e-aed9-2cb045147dc3",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_celular",
+      "targets": [
+        ["id=hospede_celular", "id"],
+        ["name=hospede[celular]", "name"],
+        ["css=#hospede_celular", "css:finder"],
+        ["xpath=//input[@id='hospede_celular']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "959c88eb-64cb-40a2-8946-365ab269cbb4",
+      "comment": "",
+      "command": "click",
+      "target": "id=hospede_celular",
+      "targets": [
+        ["id=hospede_celular", "id"],
+        ["name=hospede[celular]", "name"],
+        ["css=#hospede_celular", "css:finder"],
+        ["xpath=//input[@id='hospede_celular']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1eb793ea-6ed9-4235-b540-deabeff939ea",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=hospede_celular",
+      "targets": [
+        ["id=hospede_celular", "id"],
+        ["name=hospede[celular]", "name"],
+        ["css=#hospede_celular", "css:finder"],
+        ["xpath=//input[@id='hospede_celular']", "xpath:attributes"],
+        ["xpath=//form[@id='new_hospede']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "745fbfc4-88cc-471c-8eb4-d2138fa21b12",
       "comment": "",
       "command": "type",
       "target": "id=hospede_celular",
@@ -105,7 +333,7 @@
       ],
       "value": "99345678"
     }, {
-      "id": "9054390b-9ecd-4752-9c94-118297cf0f03",
+      "id": "a967f3ec-e375-438a-a848-34c675b5d6e4",
       "comment": "",
       "command": "click",
       "target": "name=commit",
@@ -118,7 +346,7 @@
       ],
       "value": ""
     }, {
-      "id": "6d460663-d15e-4bd5-b313-4001cebfd063",
+      "id": "8df1211b-acef-4b98-b20a-41064f7d217f",
       "comment": "",
       "command": "click",
       "target": "id=endereco_rua",
@@ -132,7 +360,35 @@
       ],
       "value": ""
     }, {
-      "id": "30310351-bae0-4362-b7e3-300b7d4d2bd1",
+      "id": "dbf3a6a3-a7b0-465a-9ca6-853045edec8e",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_rua",
+      "targets": [
+        ["id=endereco_rua", "id"],
+        ["name=endereco[rua]", "name"],
+        ["css=#endereco_rua", "css:finder"],
+        ["xpath=//input[@id='endereco_rua']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c17cd8f2-0f97-4afd-9d63-31f77d13e54f",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_rua",
+      "targets": [
+        ["id=endereco_rua", "id"],
+        ["name=endereco[rua]", "name"],
+        ["css=#endereco_rua", "css:finder"],
+        ["xpath=//input[@id='endereco_rua']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6efab878-6882-4978-87be-ef01a33bbc5b",
       "comment": "",
       "command": "type",
       "target": "id=endereco_rua",
@@ -146,7 +402,49 @@
       ],
       "value": "Severino Costa"
     }, {
-      "id": "3a6d5778-7705-4404-ac5d-0c210ef8e135",
+      "id": "6404f06f-42cc-474b-baec-b33fb903130c",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_numero",
+      "targets": [
+        ["id=endereco_numero", "id"],
+        ["name=endereco[numero]", "name"],
+        ["css=#endereco_numero", "css:finder"],
+        ["xpath=//input[@id='endereco_numero']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef81c8cf-5e00-4074-899f-c339a5816ad6",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_numero",
+      "targets": [
+        ["id=endereco_numero", "id"],
+        ["name=endereco[numero]", "name"],
+        ["css=#endereco_numero", "css:finder"],
+        ["xpath=//input[@id='endereco_numero']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c63d810f-f0ea-4591-bccb-887a55cde141",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_numero",
+      "targets": [
+        ["id=endereco_numero", "id"],
+        ["name=endereco[numero]", "name"],
+        ["css=#endereco_numero", "css:finder"],
+        ["xpath=//input[@id='endereco_numero']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0816018e-dc67-4d20-8d58-3a231ed76452",
       "comment": "",
       "command": "type",
       "target": "id=endereco_numero",
@@ -160,7 +458,49 @@
       ],
       "value": "876"
     }, {
-      "id": "a3f397d8-7428-4c98-9109-b69cef7e673d",
+      "id": "a69b9f94-80d0-464a-9ec5-7231cefcb9d0",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_complemento",
+      "targets": [
+        ["id=endereco_complemento", "id"],
+        ["name=endereco[complemento]", "name"],
+        ["css=#endereco_complemento", "css:finder"],
+        ["xpath=//input[@id='endereco_complemento']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5eb02b5-cb54-4f47-9cc8-8c9bdbe137ab",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_complemento",
+      "targets": [
+        ["id=endereco_complemento", "id"],
+        ["name=endereco[complemento]", "name"],
+        ["css=#endereco_complemento", "css:finder"],
+        ["xpath=//input[@id='endereco_complemento']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4777e60-6bb5-4076-a927-138e5275ad9b",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_complemento",
+      "targets": [
+        ["id=endereco_complemento", "id"],
+        ["name=endereco[complemento]", "name"],
+        ["css=#endereco_complemento", "css:finder"],
+        ["xpath=//input[@id='endereco_complemento']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85b19564-9dba-4573-aacd-9510f8dcefea",
       "comment": "",
       "command": "type",
       "target": "id=endereco_complemento",
@@ -174,7 +514,77 @@
       ],
       "value": "B"
     }, {
-      "id": "1a4f358b-b87a-449a-a004-95122e0505fd",
+      "id": "23a87dc2-2079-454c-a50d-ff11e042a9e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6593e20b-ea7a-4e38-a897-ebbe51779a2f",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbba1062-49bb-4b1b-a1dd-2f95126e2f68",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "826dd8a2-5800-431c-8ac1-bc823b8d9684",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcbad7e5-4e93-4cd2-ac1d-7d601eb1974b",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_bairro",
+      "targets": [
+        ["id=endereco_bairro", "id"],
+        ["name=endereco[bairro]", "name"],
+        ["css=#endereco_bairro", "css:finder"],
+        ["xpath=//input[@id='endereco_bairro']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ead081ed-e570-4bcf-b258-afb8a83e318e",
       "comment": "",
       "command": "type",
       "target": "id=endereco_bairro",
@@ -188,7 +598,7 @@
       ],
       "value": "Mainá"
     }, {
-      "id": "25a61921-fe7e-4cc8-b26e-30380a287d20",
+      "id": "e98b823e-3d8b-4d6d-9c4b-8279c807df02",
       "comment": "",
       "command": "click",
       "target": "id=endereco_cidade",
@@ -202,7 +612,35 @@
       ],
       "value": ""
     }, {
-      "id": "9782bf3c-e29d-4257-ae7c-f41f39ab665c",
+      "id": "217e09e2-2e06-4ca2-9baa-a6ca00e56c6e",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cidade",
+      "targets": [
+        ["id=endereco_cidade", "id"],
+        ["name=endereco[cidade]", "name"],
+        ["css=#endereco_cidade", "css:finder"],
+        ["xpath=//input[@id='endereco_cidade']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40fe58aa-3fd9-4a81-b00b-750704c5adf2",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_cidade",
+      "targets": [
+        ["id=endereco_cidade", "id"],
+        ["name=endereco[cidade]", "name"],
+        ["css=#endereco_cidade", "css:finder"],
+        ["xpath=//input[@id='endereco_cidade']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3abc2caa-8000-4939-882a-b504d30c0ccf",
       "comment": "",
       "command": "type",
       "target": "id=endereco_cidade",
@@ -216,7 +654,49 @@
       ],
       "value": "Caicó"
     }, {
-      "id": "54533c6f-9588-4d62-bed7-1990fd7e7756",
+      "id": "97d41bfe-9d54-49cb-ba34-fe008c2a4c91",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_estado",
+      "targets": [
+        ["id=endereco_estado", "id"],
+        ["name=endereco[estado]", "name"],
+        ["css=#endereco_estado", "css:finder"],
+        ["xpath=//input[@id='endereco_estado']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a06c189-81dc-4d59-b1a1-041b0da12c88",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_estado",
+      "targets": [
+        ["id=endereco_estado", "id"],
+        ["name=endereco[estado]", "name"],
+        ["css=#endereco_estado", "css:finder"],
+        ["xpath=//input[@id='endereco_estado']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c56544e5-5765-4ed8-8869-9b982ef0b0c8",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_estado",
+      "targets": [
+        ["id=endereco_estado", "id"],
+        ["name=endereco[estado]", "name"],
+        ["css=#endereco_estado", "css:finder"],
+        ["xpath=//input[@id='endereco_estado']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd99ffe4-982d-4e0a-b130-0c0c6ccec901",
       "comment": "",
       "command": "type",
       "target": "id=endereco_estado",
@@ -230,7 +710,49 @@
       ],
       "value": "RN"
     }, {
-      "id": "275a17e1-7153-4a41-ba82-20f0416bdfb7",
+      "id": "37c19be5-819d-43a9-8079-9342e3f5d7d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_pais",
+      "targets": [
+        ["id=endereco_pais", "id"],
+        ["name=endereco[pais]", "name"],
+        ["css=#endereco_pais", "css:finder"],
+        ["xpath=//input[@id='endereco_pais']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7aba87e4-b1cd-41c9-ac49-9ea4e4268edd",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_pais",
+      "targets": [
+        ["id=endereco_pais", "id"],
+        ["name=endereco[pais]", "name"],
+        ["css=#endereco_pais", "css:finder"],
+        ["xpath=//input[@id='endereco_pais']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14ae9434-111e-4e14-a4b2-66b1f5116130",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_pais",
+      "targets": [
+        ["id=endereco_pais", "id"],
+        ["name=endereco[pais]", "name"],
+        ["css=#endereco_pais", "css:finder"],
+        ["xpath=//input[@id='endereco_pais']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78ee5a89-f3ee-49c4-b970-6a80b60cd5de",
       "comment": "",
       "command": "type",
       "target": "id=endereco_pais",
@@ -244,7 +766,7 @@
       ],
       "value": "Brasil"
     }, {
-      "id": "728866ee-04d4-4998-932c-c049ee8df986",
+      "id": "13d9bfe6-383e-4b91-9693-6377321fd43f",
       "comment": "",
       "command": "click",
       "target": "id=endereco_cep",
@@ -258,7 +780,63 @@
       ],
       "value": ""
     }, {
-      "id": "5f1479ba-3d43-4eb1-adfb-1c52c48f2dd5",
+      "id": "a75f194f-deae-455e-b38d-efbad0b1de3f",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d951b5bd-1a86-4971-af98-7648e609b8b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33994120-de67-44b9-a5d4-61988f745179",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d83e3257-5baf-4388-8cce-319ec97c6632",
+      "comment": "",
+      "command": "click",
+      "target": "id=endereco_cep",
+      "targets": [
+        ["id=endereco_cep", "id"],
+        ["name=endereco[cep]", "name"],
+        ["css=#endereco_cep", "css:finder"],
+        ["xpath=//input[@id='endereco_cep']", "xpath:attributes"],
+        ["xpath=//form[@id='new_endereco']/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6f5e32-ef8f-4aa4-8a58-ed859ca8776d",
       "comment": "",
       "command": "type",
       "target": "id=endereco_cep",
@@ -272,7 +850,7 @@
       ],
       "value": "59300000"
     }, {
-      "id": "27c7d048-1a74-4d6a-94a6-61651e0d0af2",
+      "id": "adbce6b9-e098-4a94-95e6-4ee33f4dcb7e",
       "comment": "",
       "command": "click",
       "target": "name=commit",
@@ -285,41 +863,13 @@
       ],
       "value": ""
     }, {
-      "id": "c9c05453-959e-4cdc-b77b-f3c8ebd557aa",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Bruno Augusto",
-      "targets": [
-        ["linkText=Bruno Augusto", "linkText"],
-        ["css=td > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Bruno Augusto')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '/hospedes/1')]", "xpath:href"],
-        ["xpath=//td/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Bruno Augusto')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "8d4beaff-e367-40e5-90df-ea88ff4fa8a6",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=← Back to Hóspedes",
-      "targets": [
-        ["linkText=← Back to Hóspedes", "linkText"],
-        ["css=.text-left > a", "css:finder"],
-        ["xpath=//a[contains(text(),'← Back to Hóspedes')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '/hospedes')]", "xpath:href"],
-        ["xpath=//div/div/a", "xpath:position"],
-        ["xpath=//a[contains(.,'← Back to Hóspedes')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "a4c664ea-f03e-4a1c-b517-4d2a73441724",
+      "id": "128902db-87fc-41ec-a1a0-f5ab4c030977",
       "comment": "",
       "command": "click",
       "target": "linkText=Editar",
       "targets": [
         ["linkText=Editar", "linkText"],
-        ["css=.btn-warning > a", "css:finder"],
+        ["css=.btn-warning > .text-decoration-none", "css:finder"],
         ["xpath=//a[contains(text(),'Editar')]", "xpath:link"],
         ["xpath=//a[contains(@href, '/hospedes/1/edit')]", "xpath:href"],
         ["xpath=//td[4]/button/a", "xpath:position"],
@@ -327,7 +877,7 @@
       ],
       "value": ""
     }, {
-      "id": "48bf8b93-66ae-4e41-974f-75561b47effb",
+      "id": "e14354e7-e114-462b-abbd-74a6aefcac77",
       "comment": "",
       "command": "click",
       "target": "id=hospede_nome",
@@ -341,7 +891,7 @@
       ],
       "value": ""
     }, {
-      "id": "5b10b870-9c7b-4dc9-8a95-648c756b870f",
+      "id": "b8506b1f-1eb7-4e8c-93fc-85e3c88c9474",
       "comment": "",
       "command": "type",
       "target": "id=hospede_nome",
@@ -353,9 +903,9 @@
         ["xpath=//form[@id='edit_hospede_1']/div/input", "xpath:idRelative"],
         ["xpath=//div/input", "xpath:position"]
       ],
-      "value": "Bruno Augusto III"
+      "value": "Bruno Augusto2"
     }, {
-      "id": "d9820ebf-1afa-438d-9c01-2a45dc553306",
+      "id": "f6af899f-0120-4d72-b195-ac016dc19851",
       "comment": "",
       "command": "click",
       "target": "name=commit",
@@ -368,7 +918,7 @@
       ],
       "value": ""
     }, {
-      "id": "7f96d6aa-1cec-4a6e-9b24-2c112cc3c466",
+      "id": "dacdee78-a216-4a00-a266-15f09e0020c0",
       "comment": "",
       "command": "click",
       "target": "linkText=← Back to Hóspedes",
@@ -376,26 +926,26 @@
         ["linkText=← Back to Hóspedes", "linkText"],
         ["css=.text-left > a", "css:finder"],
         ["xpath=//a[contains(text(),'← Back to Hóspedes')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '/hospedes')]", "xpath:href"],
+        ["xpath=(//a[contains(@href, '/hospedes')])[2]", "xpath:href"],
         ["xpath=//div/div/a", "xpath:position"],
         ["xpath=//a[contains(.,'← Back to Hóspedes')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "ba96c0f3-d796-4eac-a7d7-9eea7fdab4bb",
+      "id": "0ad96b9d-eefa-40b3-bfd1-7fd46218799e",
       "comment": "",
       "command": "chooseOkOnNextConfirmation",
       "target": "",
       "targets": [],
       "value": ""
     }, {
-      "id": "46c6744a-0187-4491-ac0a-d13995afa13b",
+      "id": "f9141efb-527b-49f1-a129-3d73ebb029f6",
       "comment": "",
       "command": "click",
       "target": "linkText=Deletar",
       "targets": [
         ["linkText=Deletar", "linkText"],
-        ["css=.btn-danger > a", "css:finder"],
+        ["css=.btn-danger > .text-decoration-none", "css:finder"],
         ["xpath=//a[contains(text(),'Deletar')]", "xpath:link"],
         ["xpath=(//a[contains(@href, '/hospedes/1')])[3]", "xpath:href"],
         ["xpath=//button[2]/a", "xpath:position"],
@@ -403,16 +953,23 @@
       ],
       "value": ""
     }, {
-      "id": "b5c60ab1-13ca-467c-b94b-738c416ce7b1",
+      "id": "dd511f55-e3a9-4413-b07b-4a50993e6534",
       "comment": "",
       "command": "assertConfirmation",
       "target": "Você tem certeza?",
       "targets": [],
       "value": ""
     }, {
-      "id": "cfd2bf9e-7977-4951-92b6-eefd6c59660a",
+      "id": "f2e89342-8c20-41f6-80ee-1b7ecef54fd4",
       "comment": "",
       "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d89036d-fed9-4c14-9773-8134fd59c52d",
+      "comment": "",
+      "command": "close",
       "target": "",
       "targets": [],
       "value": ""
@@ -424,7 +981,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["1d0d13aa-9411-4476-97f6-d4211a96adeb"]
+    "tests": []
   }],
   "urls": ["http://127.0.0.1:3000/"],
   "plugins": []
