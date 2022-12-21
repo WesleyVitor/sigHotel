@@ -1,0 +1,14 @@
+<div class="text-left mt-3">
+
+    <%= simple_form_for reserva  do |f| %>
+        
+        <%= f.input :status_pagamento, as: :select, collection: [["Pago",1], ["Não Pago",0]], selected: :second  %>
+        <%= f.input :valor_pagamento %>
+        <%= f.input :hospede_id, as: :select, collection: Hospede.all %>
+        <%= f.input :quarto_id, as: :select, collection: Quarto.all %>
+        <%= f.input :data_hospedagem%>
+        <%= f.input :tipo_caracteristica, as: :select, collection: [["Padrão",:padrao], ["Master",:master], ["Deluxe",:deluxe]],selected: :first %>
+        <%= f.submit 'Salvar Quarto', input_html: {class: 'btn btn-primary'}%>
+    <% end %> 
+   
+</div>

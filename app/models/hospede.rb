@@ -20,4 +20,9 @@ class Hospede < ApplicationRecord
 
     has_one :endereco
     has_many :reserva
+
+    def to_s
+        "#{self.nome} - #{self.cpf}"
+
+    end
 end
