@@ -26,5 +26,6 @@ class Quarto < ApplicationRecord
         self.tipo_caracteristica ||= :padrao
     end
 
+    has_many :reserva
     
 end
