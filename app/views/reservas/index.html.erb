@@ -32,7 +32,7 @@
             <% @reservas.each do |reserva| %>
                 <tr>
                 <td><%= link_to reserva.codigo_reserva, reserva_path(reserva), data: {turbo_frame: "_top"} %></td>
-                <td><%= reserva.codigo_reserva%></td>
+                
                 <td><%= reserva.hospede_id%></td>
                 <td><%= reserva.quarto_id%></td>
                 <td><%= reserva.valor_pagamento%></td>

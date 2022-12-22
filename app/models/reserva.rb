@@ -28,9 +28,10 @@ class Reserva < ApplicationRecord
 
   after_initialize :set_code, :if=>:new_record?
 
-  enum status_pagamento: {pago:1, não_pago:0} 
+  enum status_pagamento: [:nao_pago, :pago]
 
   def set_code
-    self.codigo_reserva ||= rand(10**10) # Gera um número aleatório de 10 dígitos
+    self.codigo_reserva ||= rand(10**10)
+    self.status_pagamento ||= 0# Gera um número aleatório de 10 dígitos
   end
 end
