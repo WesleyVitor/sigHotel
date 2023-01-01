@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_113235) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_21_122038) do
   create_table "enderecos", force: :cascade do |t|
     t.string "rua"
     t.string "numero"
@@ -47,6 +47,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_113235) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reservas", force: :cascade do |t|
+    t.integer "quarto_id", null: false
+    t.integer "hospede_id", null: false
+    t.integer "status_pagamento", default: 0
+    t.string "codigo_reserva", null: false
+    t.datetime "data_hospedagem", null: false
+    t.float "valor_pagamento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hospede_id"], name: "index_reservas_on_hospede_id"
+    t.index ["quarto_id"], name: "index_reservas_on_quarto_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -63,4 +76,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_113235) do
   end
 
   add_foreign_key "enderecos", "hospedes"
+  add_foreign_key "reservas", "hospedes"
+  add_foreign_key "reservas", "quartos"
 end

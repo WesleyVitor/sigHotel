@@ -1,0 +1,13 @@
+<div class="text-left mt-3">
+
+    <%= simple_form_for reserva  do |f| %>
+        
+        
+        <%= f.input :valor_pagamento %>
+        <%= f.input :hospede_id, as: :select, collection: Hospede.all %>
+        <%= f.input :quarto_id, as: :select, collection: Quarto.all %>
+        <%= f.input :data_hospedagem%>
+        <%= f.submit 'Salvar Quarto', input_html: {class: 'btn btn-primary'}%>
+    <% end %> 
+   
+</div>

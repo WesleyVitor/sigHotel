@@ -26,5 +26,10 @@ class Quarto < ApplicationRecord
         self.tipo_caracteristica ||= :padrao
     end
 
+    has_many :reserva
+
+    def to_s
+        "#{self.numero_quarto} - #{self.status}"
+    end
     
 end

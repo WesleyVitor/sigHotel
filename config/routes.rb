@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       resources :enderecos, only:[:new, :create]
   end
   resources :quartos
+
+  resources :reservas
 end

@@ -19,4 +19,10 @@ class Hospede < ApplicationRecord
     enum status: {active: "active", inactive: "inactive", reserve: "reserve"}
 
     has_one :endereco
+    has_many :reserva
+
+    def to_s
+        "#{self.nome} - #{self.cpf}"
+
+    end
 end

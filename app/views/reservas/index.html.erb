@@ -1,0 +1,58 @@
+
+
+<div class="text-left mt-3">
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+<div class="d-flex justify-content-between">
+<h1>Listagem de Reservas</h1>
+<button>
+    <%=  link_to 'Cadastrar Reserva', new_reserva_path, class: 'btn btn--secundary text-decoration-none'%>
+
+    </button>
+</div>
+
+<% if @reservas.count > 0%>
+    <table class="table">
+        <caption>Reservas</caption>
+        <thead>
+            <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Hóspede</th>
+            <th scope="col">Quarto</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Data da Hospedagem</th>
+            <th scope="col">Status de pagamento</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <% @reservas.each do |reserva| %>
+                <tr>
+                <td><%= link_to reserva.codigo_reserva, reserva_path(reserva), data: {turbo_frame: "_top"} %></td>
+                
+                <td><%= reserva.hospede_id%></td>
+                <td><%= reserva.quarto_id%></td>
+                <td><%= reserva.valor_pagamento%></td>
+                <td><%= reserva.data_hospedagem%></td>
+                <td><%= reserva.status_pagamento%></td>
+                <td scope="col">
+                                <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_reserva_path(reserva), class: "text-decoration-none"%></button>
+                                <button type="button" class="btn btn-danger"><%= link_to "Deletar", reserva_path(reserva),class: "text-decoration-none", data: {
+                                    turbo_method: :delete,  turbo_confirm: "Você tem certeza?"
+                                } %></button>
+                        </td>
+                </tr>
+
+            <%end%>
+            
+        </tbody>
+    </table>
+<% else%>
+    <h3>Não existe Reservas cadastradas</h3>
+
+<%end%>
+
+</div>
